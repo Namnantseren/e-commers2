@@ -1,0 +1,101 @@
+.allselectionbtn {
+    width: 139px;
+    height: 45px;
+    color: #003585;
+    border: 1px solid #003585;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: white;
+}
+
+.allselectionbtn:active {
+    background-color: #A7F65C;
+    color: white;
+    border-color: #A7F65C;
+}
+
+.cardimg img {
+    width: 300px;
+    height: 180px;
+    border-radius: 20px;
+    padding: 1px 5px 5px 5px;
+}
+
+.leftselect {
+    font-weight: 600;
+    font-size: 28px;
+    color: #003585;
+}
+
+/* .special-camera {
+    background-color: #A7F65C;
+    color: white;
+    border-color: #A7F65C;
+} */
+
+.containerSelector {
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 97px;
+    margin-bottom: 54px;
+}
+
+.midselector {
+    width: 1314px;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-bottom: 37px;
+    gap: 24px;
+}
+
+.cards {
+    width: 308px;
+    height: 313px;
+    border-radius: 20px;
+    border: 0.98px solid #b6b6b6;
+}
+
+.first {
+    font-weight: 500;
+    font-size: 17.09px;
+    color: #003585;
+}
+
+.second {
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.third {
+    font-weight: 600;
+    font-size: 17.09px;
+}
+
+.lilselector {
+    width: 186px;
+}
+
+.containerlilSelector {
+    width: 282px;
+    height: 101px;
+    margin-left: 16px;
+    margin-top: 0;
+}
+
+.innershopselector {
+    background-color: rgb(218, 214, 214);
+    width: 45px;
+    height: 42px;
+    border-radius: 100px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+.innershopselector img{
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 8px;
+}

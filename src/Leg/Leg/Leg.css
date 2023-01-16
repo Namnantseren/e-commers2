@@ -1,0 +1,146 @@
+.flex {
+    display: flex;
+}
+
+.leg {
+    height: 783px;
+    width: 1315px;
+    margin: auto;
+    margin-top: 116px;
+}
+
+.leftproduct {
+    width: 642px;
+    height: 783px;
+    border: 1px solid #C8C8C8;
+    border-radius: 20px;
+}
+
+.addtocartcontainer {
+    background-color: #A7F65C;
+    border: 0;
+    border-radius: 20px;
+    width: 204px;
+    height: 60px;
+    color: #00314D;
+    margin-top: 37px;
+}
+
+.addtocart {
+    font-weight: 600;
+    font-size: 15.74px;
+    margin-left: 25px;
+}
+
+.containerofcarts {
+    width: 538px;
+    height: 282px;
+    margin: auto;
+}
+
+.innershopping {
+    width: 30.49px;
+    height: 30.49px;
+    background-color: #003585;
+    border-radius: 50px;
+    margin: 10px 0px 0px 40px;
+}
+
+.innershopping img {
+    width: 17.21px;
+    height: 17.21px;
+    margin-top: 6px;
+}
+
+.jbl {
+    font-weight: 600;
+    font-size: 21px;
+    color: #003585;
+    margin-top: 5px;
+}
+
+.dollar {
+    font-weight: 600;
+    font-size: 17px;
+    color: #4A4A4A;
+}
+
+.randombullshit {
+    font-weight: 400;
+    font-size: 13px;
+    color: #00314D;
+}
+
+.specialproduct {
+    background-color: #003585;
+    color: white;
+    width: 252px;
+    height: 60px;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.specialp {
+    margin: auto;
+    padding-top: 10px;
+}
+
+.gap {
+    gap: 55px;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 163px;
+}
+
+/*                                        TOP   product                                 */
+
+.topproduct {
+    width: 650px;
+    height: 369px;
+    border-radius: 20px;
+    border: 1px solid #C8C8C8;
+    margin-left: 29px;
+}
+
+.containeroflil {
+    margin: 40px 34px 0px 16px;
+}
+
+.containerofbull {
+    width: 265px;
+    height: 300px;
+    margin-top: 40px;
+}
+
+.byspacing {
+    border: 0;
+    background: 0;
+    color: #A7F65C;
+    padding: 0;
+    margin-top: 55px;
+    font-size: 17.14px;
+}
+
+.containerofoct {
+    font-weight: 500;
+    font-size: 20px;
+    color: #003585;
+    width: 147px;
+    height: 41px;
+    border-radius: 20px;
+    border: 1px solid #A7F65C;
+}
+
+.oct {
+    text-align: center;
+    margin: auto;
+    padding-top: 5px;
+}
+
+.bottomproduct {
+    margin-top: 45px;
+}
+
+/*                                        TOP   product                                 */

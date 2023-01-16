@@ -1,0 +1,80 @@
+.containerCanon {
+    width: 100%;
+    height: 573px;
+    background-color: #003585;
+    margin-top: 0px;
+}
+
+.flex {
+    display: flex;
+}
+
+.rightCanon {
+    position: absolute;
+    right: 0;
+    margin: 29px 206px 0px 0px;
+}
+
+.canonCamera {
+    font-weight: 500;
+    font-size: 55px;
+    color: white;
+}
+
+.containerofcanon {
+    width: 200px;
+    height: 110px;
+    margin-left: 174px;
+}
+
+
+.btns {
+    width: 144px;
+    height: 61px;
+    border-radius: 20px
+}
+
+.containerofbtns {
+    margin: 72px 0px 0px 174px;
+}
+
+.shopnow {
+    background-color: white;
+    border: 0;
+}
+
+.viewmore {
+    color: #A7F65C;
+    border: 1px solid #A7F65C;
+    margin-left: 21px;
+    background-color: #003585;
+}
+
+.containerofbtcan {
+    margin-top: 103px;
+}
+
+.rightCanon img {
+    position: absolute;
+    right: 0;
+}
+
+.only {
+    background-color: #A7F65C;
+    width: 120px;
+    height: 114px;
+    border-radius: 100px;
+    font-size: 21.57px;
+    font-weight: 600;
+    color: #003585;
+    align-items: center;
+    justify-content: center;
+    position: absolute  ;
+    margin: 300px 150px 0px 0px;
+    margin-left: 50px;
+    right: 0;
+}
+
+.onlydollar {
+    width: 45px;
+}
