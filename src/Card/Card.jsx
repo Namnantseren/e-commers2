@@ -10,7 +10,7 @@ export default function Card(props) {
                     <div className='containerlilSelector flex'>
                         <div className="lilselector">
                             <p className='first'>{props.item.title}</p>
-                            <p className='second'>{props.item.description}</p>
+                            <p className='second'>{props.item.description.slice(0,50)}...</p>
                             <p className='third'>price:{props.item.price}</p>
                         </div>
                         <div className='innershopselector'>
