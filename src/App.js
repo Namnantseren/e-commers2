@@ -1,25 +1,19 @@
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Nav from './Nav/Nav.js';
-import Slide from './Slider/Slide';
-import Leg from './Leg/Leg.js';
-import Footer from './Footer/Footer';
-import Section from './Section/Section';
-// import Add from './AddData/Add'
+import Home from './Pages/Home';
+import ProductCard from './Pages/ProductCard';
 
 function App() {
   return (
     <div className="App">
-        <Nav/>
-        <Slide/>
-        <Section/>
-        {/* <Add/> */}
-        <div className='group-laptop flex'>
-          <img src="./longleg.svg" alt="" />
-        </div>
-        <Leg/>
-        <Footer/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/product/:id' element={<ProductCard/>}/>
+        </Routes>
     </div>
   );
 }
+
+
 
 export default App;

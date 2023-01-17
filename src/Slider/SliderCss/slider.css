@@ -5,6 +5,13 @@
     margin-top: 0px;
 }
 
+.container {
+    /* justify-content: center; */
+    width: 800px;
+    align-items: center;
+    margin: auto;
+}
+
 .flex {
     display: flex;
 }

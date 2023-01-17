@@ -10,9 +10,9 @@
     background-color: white;
 }
 
-.allselectionbtn:active {
+.allselectionbtn:focus {
     background-color: #A7F65C;
-    color: white;
+    color: black;
     border-color: #A7F65C;
 }
 
@@ -49,6 +49,10 @@
     flex-wrap: wrap;
     margin-bottom: 37px;
     gap: 24px;
+}
+
+.computertab {
+    width: 200px;
 }
 
 .cards {
