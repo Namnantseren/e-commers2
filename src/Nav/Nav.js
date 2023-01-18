@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./NavStyle/NavStyle.css";
+import { Data } from "../Data/Data";
+import Search from "../Pages/Search";
 
 export default function Nav() {
   const lildata = [
@@ -10,18 +12,30 @@ export default function Nav() {
   ];
   const [userName, setuserName] = useState();
   const [userPassword, setuserPassword] = useState();
+  const [isLogged, setIsLogged] = useState(false)
   function sign() {
     lildata.map((use) => {
       if (userName === use.username && userPassword === use.password) {
-        // navigate(`/`);
-        alert("Orson")
-      } else {
-        alert("Username oruulnu!!");
+        setIsLogged(true)
       }
     });
+    if(isLogged){
+      navigate(`/product/a4bbe2cc`)
+    }else{
+      alert("hudlaa bna")
+    }
   }
-  const navigate = useNavigate();
 
+  const [research, setResearch] = useState();
+  const test1 = useParams();
+  console.log(test1)
+
+  function searchclick(e) {
+    Data.filter((sen) => sen.name.includes(test1));
+    navigate(`/search/${research}`)
+  }
+
+  const navigate = useNavigate();
   function jumpmain() {
     navigate(`/`);
   }
@@ -32,8 +46,8 @@ export default function Nav() {
           <img src="../Nav.svg" onClick={jumpmain} alt="" />
         </div>
         <div className="allsearch">
-          <input className="search" placeholder="Serach any things"></input>
-          <button className="searchBtn">Search</button>
+          <input className="search" placeholder="Serach any things" onChange={(e) => setResearch(e.target.value)}></input>
+          <button className="searchBtn" onClick={searchclick}>Search</button>
         </div>
       </div>
       <div className="nav-right flex">

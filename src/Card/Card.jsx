@@ -7,7 +7,7 @@ export default function Card(props) {
         navigate(`/product/${props.item.id}`)
     }
     return(
-        <div className='cards ' onClick={pop}>
+        <div className='cards' onClick={pop}>
                     <div className="cardimg">
                         <img src={props.item.image} alt="pic" />
                     </div>
