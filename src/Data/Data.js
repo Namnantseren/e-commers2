@@ -15,7 +15,8 @@ export const Data = [
   {
     name: "HP Elitebook 840",
     spec: [
-      { DisplaySize: '14"', CPU: "i5-6300U 2,4 GHZ" },
+      { DisplaySize: '14"' },
+      { CPU: "i5-6300U 2,4 GHZ" },
       { HardDrive: "1Tb SSD" },
       { RAM: "16GB" },
     ],
@@ -48,12 +49,10 @@ export const Data = [
   {
     name: "Acer Spin 3",
     spec: [
-      {
-        DisplaySize: '14"',
-        CPU: "i5-8250U 2,4 GHZ",
-        HardDrive: "512Gb SSD",
-        RAM: "8GB",
-      },
+      { DisplaySize: '14"' },
+      { CPU: "i5-8250U 2,4 GHZ" },
+      { HardDrive: "512Gb SSD" },
+      { RAM: "8GB" },
     ],
     id: "0bd16f1e",
     image: "https://i.ebayimg.com/images/g/YLkAAOSwKjpjpOdr/s-l1600.jpg",
@@ -95,15 +94,15 @@ export const Data = [
   },
   {
     description:
-      "Redmi PadAll in one, pad for fun90Hz buttery smooth displayHigh-performance MediaTek Helio G99Long-lasting 8000mAh batteryFlagship-level unibody design",
+      "Redmi Pad All in one, pad for fun 90Hz buttery smooth display High-performance MediaTek Helio G99 Long-lasting 8000mAh battery Flagship-level unibody design",
     spec: [
-      "{Size: 10.61 display}",
-      " {Resolution: 1200 x 2000}",
-      "{Refresh rate: 90Hz}",
-      "{Brightness : 400nits (typ)}",
+      { display: 10.61 },
+      { Resolution: "1200 x 2000" },
+      { Refresh_rate: "90Hz" },
+      { Brightness: "400nits " },
     ],
     name: "Redmi Pad",
-    id: "",
+    id: "3124125",
     image:
       "https://i02.appmifile.com/84_operator_sg/13/09/2022/972447360327e0954a43fb47c2b84e68.png?f=webp",
     price: 439,
@@ -113,7 +112,7 @@ export const Data = [
   },
   {
     description:
-      "As we said a moment ago, our favorite laptop features a 13.3″ inch touchscreen. Xiaomi has gone all out, as it is not only of high definition screen of 360° rotation, but it is also Super Retina OLED with a resolution of 2880 x 1800.It has a brightness of up to 600 nits and a contrast ratio of 1000000:1, with a refresh rate of 90Hz, Adjustable to 60Hz if desired via the Fn + S keyboard combination. The above resolution translates to 255 PPI with a display ratio of 16:10. Compatible with DC attenuation * TÜV Rheinland hardware low blue light certification *, Eye Care Display certification, Dolby Vision certification, VESA DisplayHDR 500 High Standard certification.",
+      "As we said a moment ago, our favorite laptop features a 13.3″ inch touchscreen. Xiaomi has gone all out, as it is not only of high definition screen of 360° rotation, but it is also Super Retina OLED with a resolution of 2880 x 1800. It has a brightness of up to 600 nits and a contrast ratio of 1000000:1, with a refresh rate of 90Hz, Adjustable to 60Hz if desired via the Fn + S keyboard combination. The above resolution translates to 255 PPI with a display ratio of 16:10. Compatible with DC attenuation * TÜV Rheinland hardware low blue light certification *, Eye Care Display certification, Dolby Vision certification, VESA DisplayHDR 500 High Standard certification.",
     spec: [
       { MemoryCapacity: "Main memory allocated memory" },
       { DisplaySize: "13.3" },
@@ -134,9 +133,9 @@ export const Data = [
       { DisplayResolution: "2880*1800Keyboard" },
     ],
     name: "Xiaomi Mi Book Air 13",
-    id: "",
+    id: "7468568",
     image:
-      "https://www.xiaomihome.global/wp-content/uploads/2022/11/xiaomi-book-air-13-2022-cover-1.webp",
+      "https://i02.appmifile.com/84_operator_sg/13/09/2022/972447360327e0954a43fb47c2b84e68.png?f=webp",
     price: 1200,
     stock: 10,
     sale: 247,
@@ -162,7 +161,7 @@ export const Data = [
       { capacity: "25 Liters" },
       { wattage: "1500W" },
       { weight: "6380 Grams" },
-      { finishType: "HD6975/00" },
+      { finishType: "HD6975 / 00" },
     ],
     name: "Philips Oven",
     id: "8bf7f8d6-92f3-11ed-a1eb-0242ac120002",
@@ -178,9 +177,8 @@ export const Data = [
     spec: [
       { brand: "XP-PEN" },
       { model: "Artist12" },
-      { screen: "11.6 Inch" },
-      { connectivity: "USB/HDMI" },
-      { accessories: "PN06 Battery-Free Pen" },
+      { screen: " 11.6 Inch" },
+      { connectivity: "USB/HDMI", accessories: "PN06 Battery-Free Pen" },
     ],
     name: "Sketch Pad",
     id: "9afc4a40-92f7-11ed-a1eb-0242ac120002",
@@ -190,15 +188,15 @@ export const Data = [
     sale: 12,
     category: "computers & tablets",
   },
+
   {
     description:
       "Apple 20W USB-C Power Adapter - iPhone Charger with Fast Charging Capability, Type C Wall Charger",
     spec: [
-      { brand: "XP-PEN" },
-      { model: "Artist12" },
-      { screen: "11.6 Inch" },
-      { connectivity: "USB/HDMI" },
-      { accessories: "PN06 Battery-Free Pen" },
+      { Brand: "Apple" },
+      { Connectivity_Technology: "USB-C" },
+      { Connector_Type: "USB Type C" },
+      { Compatible_Devices: "Apple iPhone" },
     ],
     name: "Charger",
     id: "9c7a554c",
@@ -235,7 +233,7 @@ export const Data = [
           "Enjoy enhanced sound from the system’s onboard speakers when playing in Handheld and Tabletop modes.",
       },
     ],
-    name: "Nintendo Switch - OLED Model/White Joy-Con",
+    name: "Nintendo Switch",
     id: "6a411100",
     image: "https://m.media-amazon.com/images/I/51yJ+OqktYL.jpg",
     price: 54,
@@ -247,7 +245,7 @@ export const Data = [
     description:
       "Fast-heating electric glass carafe kettle for quickly and conveniently boiling water",
     spec: [{ height: "8.27 inches" }, { audio: "4.92inches" }],
-    name: "Basics Electric Glass and Steel Kettle",
+    name: "Basics Electric ",
     id: "92fadc2a",
     image: "https://m.media-amazon.com/images/I/61JS5e82ayL._AC_SX679_.jpg",
     price: 24,
@@ -259,7 +257,7 @@ export const Data = [
     description:
       "Celestron PowerSeeker 127EQ Telescope - 20mm Erect-Image Eyepiece - 4mm Eyepiece - 3x Barlow Lens - Star Pointer Finder - Equatorial Head - 2x Slow-Motion Cables - Adjustable-Height Tripod - Counterweight Bar - 7.5 lbs Counterweight - Download Code - Original Box",
     spec: [{ height: "8.46 inches" }, { width: "16.73 inches" }],
-    name: "​​Celestron - PowerSeeker 127EQ Telescope",
+    name: "​ PowerSeeker Telescope",
     id: "39b365d6",
     image: "https://m.media-amazon.com/images/I/61Squ7U2zRL._AC_SX679_.jpg",
     price: 169,
@@ -281,7 +279,7 @@ export const Data = [
         Network: "WiFi",
       },
     ],
-    name: "Apple IPad Pro 2022 12.9 inches",
+    name: "Apple IPad Pro ",
     id: "0ed4e2d2",
     image: "https://m.media-amazon.com/images/I/81c+9BOQNWL._AC_SX679_.jpg",
     price: 1094,
@@ -381,8 +379,145 @@ export const Data = [
     sale: 0.1,
     category: "tablets",
   },
+
+  {
+    description:
+      "The earliest existing record of a telescope was a 1608 patent submitted to the government in the Netherlands by Middelburg spectacle maker Hans Lipperhey for a refracting telescope.[",
+    spec: [{ height: "38 7/8 inches" }, { width: "27 3/4 inches" }],
+    name: "Telescope",
+    id: "7301e3ec",
+    image:
+      "https://m.media-amazon.com/images/I/51vfoiVL2LL._AC_UY436_FMwebp_QL65_.jpg",
+    price: 94.99,
+    stock: 28,
+    sale: 10.0,
+    category: "telescope",
+  },
+
+  {
+    description:
+      "A computer is a machine that can be programmed to carry out sequences of arithmetic or logical operations (computation) automatically.",
+    spec: [
+      { Weight: "3.3 Pounds" },
+      { Lens_Coating: "Fully Coated" },
+      { Lens_Diameter: "70 Millimeters" },
+    ],
+    name: "Portable Telescope",
+    id: "7301e694",
+    image: "https://m.media-amazon.com/images/I/41jzRLfDnAL._AC._SR360,460.jpg",
+    price: 949.99,
+    stock: 10,
+    sale: 10.0,
+    category: "computers & tablets",
+  },
+
+  {
+    description:
+      "A tablet computer, commonly shortened to tablet, is a mobile device, typically with a mobile operating system and touchscreen display processing circuitry, and a rechargeable battery in a single, thin and flat package. ",
+    spec: [
+      { capacity: "0.8 cubic feet" },
+      { color: "Brushed Stainless Steel" },
+    ],
+    name: "I Pad",
+    id: "7301e7de",
+    image: "https://m.media-amazon.com/images/I/61uA2UVnYWL._AC._SR360,460.jpg",
+    price: 394.99,
+    stock: 40,
+    sale: 50.0,
+    category: "computers & tablets",
+  },
+
+  {
+    description:
+      "A video game console is an electronic device that outputs a video signal or image to display a video game that can be played with a game controller.",
+    spec: [
+      { DisplaySize: "6.8 inch" },
+      { CPU: "Medea Teck Helio G 95.8 core" },
+
+      { RAM: "11.6GB" },
+    ],
+    name: "I Pad",
+    id: "7301e90a",
+    image:
+      "https://m.media-amazon.com/images/I/61EN9UQLg2L._AC_UY436_FMwebp_QL65_.jpg",
+    price: 389.99,
+    stock: 20,
+    sale: 9.0,
+    category: "gaming console",
+  },
+
+  {
+    description:
+      "FOOD STEAMER: With 7.4 quarts of cooking capacity & 2 separate steaming containers, you can cook a full meal with sides with one simple turn of a switch.",
+    spec: [{ capacity: "5 Liters" }, { wattage: "1500W" }],
+    name: "Food Steamer",
+    id: "7301ea4a",
+    image:
+      "https://m.media-amazon.com/images/I/81s-z8ThKlL._AC_UL640_FMwebp_QL65_.jpg",
+    price: 89.99,
+    stock: 5,
+    sale: 5.0,
+    category: "appliances",
+  },
+  {
+    description:
+      "Astonishing performance. Incredibly advanced displays. Superfast wireless connectivity. Next-level Apple Pencil capabilities. Powerful new features in iPadOS 16. The ultimate iPad experience.",
+    spec: [{ CPU: "8-core" }, { GPU: "10-core" }],
+    name: "iPad Pro",
+    id: "88b45bfa",
+    image:
+      "https://www.apple.com/v/ipad-pro/al/images/overview/chip/performance_hero__cxya4f2p5euu_large_2x.jpg",
+    price: 799,
+    stock: 23,
+    sale: 10,
+    category: "computers & tablets",
+  },
+  {
+    description: "Serious performance in a thin and light design.",
+    spec: [{ inc: "10.9" }, { chip: "m1" }],
+    name: "iPad Air",
+    id: "88b45eac",
+    image:
+      "https://www.apple.com/v/ipad-pro/al/images/overview/keyboard-pencil/accessories_1__f688jyg47vm2_large_2x.png",
+    price: 599,
+    stock: 4,
+    sale: 0,
+    category: "computers & tablets",
+  },
+  {
+    description: "The all‑new colorful iPad for the things you do every day.",
+    spec: [{ gen: "10th" }, { color: "sRGB" }],
+    name: "iPad",
+    id: "88b45fd8",
+    image:
+      "https://www.apple.com/v/ipad-pro/al/images/overview/keyboard-pencil/magic_keyboard_hero__ffbg8kz9n8qe_large_2x.jpg",
+    price: 499,
+    stock: 7,
+    sale: 7,
+    category: "computers & tablets",
+  },
+  {
+    description: "All the essentials in the most affordable iPad.",
+    spec: [{ gen: "9th" }, { inc: "10.2" }],
+    name: "iPad",
+    id: "88b460fa",
+    image:
+      "https://fdn.gsmarena.com/imgroot/news/20/09/new-ipads-announced/-1200/gsmarena_008.jpg",
+    price: 329,
+    stock: 4,
+    sale: 5,
+    category: "computers & tablets",
+  },
+  {
+    description: "The full iPad experience designed to fit in one hand.",
+    spec: [{ inc: "8.3" }, { chip: "A15" }],
+    name: "iPad mini",
+    id: "88b462d0",
+    image:
+      "https://cdn.shopify.com/s/files/1/1706/9177/products/ipad-mini-6-pink-Custom-Mac-BD.jpg?v=1662195085",
+    price: 499,
+    stock: 3,
+    sale: 20,
+    category: "computers & tablets",
+  },
 ];
-
-
-
-// export default Data;

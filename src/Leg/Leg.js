@@ -10,7 +10,7 @@ export default function leg() {
                         <p className='specialp'>Special Product</p>
                     </div>
                     <div>
-                        <img src="speaker.svg" alt="" />
+                        <img src="../speaker.svg" alt="" />
                     </div>
                     <div className='containerofcarts'>
                         <div>
@@ -23,7 +23,7 @@ export default function leg() {
                         <button className='addtocartcontainer flex'>
                             <p className='addtocart'>Add to cart</p>
                             <div className='innershopping'>
-                                <img src="shopping.svg" alt="pic" />
+                                <img src="../shopping.svg" alt="pic" />
                             </div>
                         </button>
                     </div>
@@ -31,7 +31,7 @@ export default function leg() {
                 <div className='rightproduct'>
                     <div className='topproduct flex'>
                         <div className='containeroflil'>
-                            <img src="lilspeaker.svg" alt="pic" />
+                            <img src="../lilspeaker.svg" alt="pic" />
                         </div>
                         <div className='containerofbull'>
                             <div className='containerofoct'>
@@ -46,7 +46,7 @@ export default function leg() {
                     </div>
                     <div className='topproduct bottomproduct flex'>
                         <div className='containeroflil'>
-                            <img src="bigspeaker.svg" alt="pic" />
+                            <img src="../bigspeaker.svg" alt="pic" />
                         </div>
                         <div className='containerofbull'>
                             <div className='containerofoct'>
@@ -62,11 +62,11 @@ export default function leg() {
                 </div>
             </div>
             <div className='flex gap'>
-                <img src="logo1.svg" alt="pic" />
-                <img src="logo2.svg" alt="pic" />
-                <img src="logo3.svg" alt="pic" />
-                <img src="logo4.svg" alt="pic" />
-                <img src="logo5.svg" alt="pic" />
+                <img src="../logo1.svg" alt="pic" />
+                <img src="../logo2.svg" alt="pic" />
+                <img src="../logo3.svg" alt="pic" />
+                <img src="../logo4.svg" alt="pic" />
+                <img src="../logo5.svg" alt="pic" />
             </div>
         </div>
     )

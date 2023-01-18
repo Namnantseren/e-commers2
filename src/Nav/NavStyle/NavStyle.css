@@ -14,6 +14,71 @@
     margin-left: 76px;
 }
 
+.navImage:hover {
+    cursor: pointer;
+}
+
+.inputChanger {
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    padding-bottom: 0;
+    margin-top: 20px;
+}
+
+.btn-close {
+    margin-left: 250px;
+}
+
+.nevtreh {
+    background-color: #003585;
+    font-size: 18px;
+    width: 432px;
+    height: 48px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.esvel {
+    position: absolute;
+    color: #AFADB5;
+    font-size: 20px;
+    background-color: #fff;
+    width: 70px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin-left: 215px;
+}
+
+
+.secret {
+    color: #AFADB5;
+    border-bottom: 1px solid #AFADB5;
+    width: 182px;
+    height: 24px;
+    margin-left: 280px;
+}
+
+.innerinputChanger {
+    font-size: 18px;
+    width: 432px;
+    height: 48px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.burtguuleh {
+    font-size: 18px;
+    width: 432px;
+    height: 48px;
+    margin: auto;
+    margin-bottom: 20px;
+    color: #003585;
+    background-color: white;
+    border: 1px solid #A7F65C;
+}
+
 .search {
     width: 523px;
     height: 48px;
@@ -52,7 +117,26 @@ button {
 }
 
 .nav-right {
+    
     width: 230px;
     right: 0;
     position: absolute;
+
 }
+
+.login {
+    color: white;
+}
+
+.border{
+    position: relative; 
+    border-top: 1px solid #333;
+    color: #333;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.modal-content {
+    margin-top: 300px;
+}
+

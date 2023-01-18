@@ -20,11 +20,11 @@ export default function Section() {
                     <p>Popular products</p>
                 </div>
                 <div className='rightselect'>
-                    <button className='allselectionbtn' onClick={changer}>appliances</button>
+                    <button className='allselectionbtn' onClick={changer}>All</button>
                     <button className='allselectionbtn computertab' onClick={changer}>computers & tablets</button>
                     <button className='allselectionbtn' onClick={changer}>gaming console</button>
                     <button className='allselectionbtn' onClick={changer}>telescope</button>
-                    <button className='allselectionbtn' onClick={changer}>All</button>
+                    <button className='allselectionbtn' onClick={changer}>appliances</button>
                 </div>
             </div>
             <div className='midselector flex'>

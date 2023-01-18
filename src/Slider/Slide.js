@@ -3,7 +3,7 @@ import './SliderCss/slider.css'
 export default function slide() {
     return(
         <div className='containerCanon flex'>
-            <div className='leftCanon container flex'>
+            <div className='leftCanon'>
                 <div className='containerofbtcan'>
                     <div className='containerofcanon'>
                         <p className='canonCamera'>Canon camera</p>
