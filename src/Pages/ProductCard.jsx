@@ -3,7 +3,6 @@ import { Data } from "../Data/Data"
 import "./ProductCard/Pro.css"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
-import Leg from "../Leg/Leg"
 
 export default function ProductCard() {
     const test = useParams( )
@@ -27,7 +26,6 @@ export default function ProductCard() {
                     </div>
                 </div>
             </div>
-            <Leg/>
             <Footer/>
         </div>
     )

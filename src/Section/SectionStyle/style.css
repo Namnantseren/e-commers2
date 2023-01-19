@@ -10,6 +10,7 @@
     background-color: white;
 }
 
+
 .allselectionbtn:focus {
     background-color: #A7F65C;
     color: black;
@@ -17,10 +18,10 @@
 }
 
 .cardimg img {
-    width: 300px;
+    width: 306px;
     height: 180px;
-    border-radius: 20px;
-    padding: 1px 5px 5px 5px;
+    border-radius: 20px 20px 0px 0px;
+    /* padding: 1px 5px 5px 5px; */
 }
 
 .leftselect {
@@ -102,4 +103,8 @@
     text-align: center;
     margin-top: 10px;
     margin-left: 8px;
+}
+
+.containerofnewcard {
+    margin-top: 100px;
 }

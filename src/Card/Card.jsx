@@ -7,14 +7,17 @@ export default function Card(props) {
         navigate(`/product/${props.item.id}`)
     }
     return(
-        <div className='cards' onClick={pop}>
+        <div className='containerofcard'>
+            <div className='cards' onClick={pop}>
                     <div className="cardimg">
                         <img src={props.item.image} alt="pic" />
                     </div>
                     <div className='containerlilSelector flex'>
                         <div className="lilselector">
                             <p className='first'>{props.item.title}</p>
-                            <p className='second'>{props.item.description.slice(0,50)}...</p>
+                            <p className='third'>{props.item.name}</p>
+                            <p>{props.item.category}</p>
+                            {/* <p className='second'>{props.item.description.slice(0,50)}...</p> */}
                             <p className='third'>price:{props.item.price}</p>
                         </div>
                         <div className='innershopselector'>
@@ -22,5 +25,6 @@ export default function Card(props) {
                         </div>
                     </div>
                 </div>
+        </div>
     )
 }

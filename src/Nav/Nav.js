@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
 import "./NavStyle/NavStyle.css";
-import { Data } from "../Data/Data";
-import Search from "../Pages/Search";
 
 export default function Nav() {
   const lildata = [
@@ -30,10 +28,21 @@ export default function Nav() {
   const test1 = useParams();
   console.log(test1)
 
-  function searchclick(e) {
-    Data.filter((sen) => sen.name.includes(test1));
-    navigate(`/search/${research}`)
+  function searchclick() {
+    // if(Data.filter((sen) => sen.name.includes(""))){
+    //   navigate(`/`)
+    // }else if(Data.filter((sen) => sen.name.includes(test1))){
+    //   navigate(`/search/${research}`)
+    // };
+    if(research !== "" || research !== undefined || research !== null){
+      navigate(`/search/${research}`)
+    }
   }
+
+  // function searchclick() {
+  //   Data.filter((sen) => sen.name.includes(test1))
+  //   navigate(`/search/${research}`)
+  // }
 
   const navigate = useNavigate();
   function jumpmain() {
@@ -46,8 +55,10 @@ export default function Nav() {
           <img src="../Nav.svg" onClick={jumpmain} alt="" />
         </div>
         <div className="allsearch">
-          <input className="search" placeholder="Serach any things" onChange={(e) => setResearch(e.target.value)}></input>
-          <button className="searchBtn" onClick={searchclick}>Search</button>
+          <form onSubmit={searchclick}>
+            <input className="search" placeholder="Serach any things" onChange={(e) => setResearch(e.target.value)}></input>
+            <button className="searchBtn" type="submit">Search</button>
+          </form>
         </div>
       </div>
       <div className="nav-right flex">
@@ -55,7 +66,7 @@ export default function Nav() {
         <button className="Signin">
           <button
             type="button"
-            class="btn login"
+            className="btn login"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
@@ -63,27 +74,27 @@ export default function Nav() {
           </button>
 
           <div
-            class="modal fade"
+            className="modal fade"
             id="exampleModal"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
-            <div class="modal-dialog">
-              <div class="modal-content">
+            <div className="modal-dialog">
+              <div className="modal-content">
                 <div className="">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">
                     Modal title
                   </h1>
                   <img src="../Loginlogo.svg"/>
                   <button
                     type="button"
-                    class="btn-close"
+                    className="btn-close"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body inputChanger flex ">
+                <div className="modal-body inputChanger flex ">
                   <input
                     type="text"
                     onChange={(e) => setuserName(e.target.value)}
@@ -103,7 +114,7 @@ export default function Nav() {
 
                 <button
                   type="button"
-                  class="btn btn-primary nevtreh"
+                  className="btn btn-primary nevtreh"
                   onClick={sign}
                 >
                   Нэвтрэх
@@ -115,7 +126,7 @@ export default function Nav() {
                 <div>
                   <button
                     type="button"
-                    class="btn btn-secondary burtguuleh"
+                    className="btn btn-secondary burtguuleh"
                     data-bs-dismiss="modal"
                   >
                     Бүртгүүлэх

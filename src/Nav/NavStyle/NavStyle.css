@@ -87,19 +87,22 @@
     border: 0;
 }
 
+
+
 .allsearch {
     margin-left: 85px;
 }
 
 .searchBtn {
     width: 132px;
-    height: 51px;
+    height: 48px;
     border-radius: 0px 20px 20px 0px;
     background-color: #003585;
     border: 1px solid white;
     color: white;
     font-size: 14px;
     font-weight: 600;
+    padding-top: 3px;
 }
 
 .Signin {
