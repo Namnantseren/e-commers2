@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./NavStyle/NavStyle.css";
 
 export default function Nav() {
@@ -15,10 +15,10 @@ export default function Nav() {
   function sign() {
     lildata.map((use) => {
       if (userName === use.username && userPassword === use.password) {
-        if(userName === "Admin"){
-          navigate(`/Dashboard/AllDash`)
-        }else {
-          navigate("/profile")
+        if (userName === "Admin") {
+          navigate(`/Dashboard/AllDash`);
+        } else {
+          navigate("/profile");
         }
       }
     });
@@ -31,7 +31,7 @@ export default function Nav() {
 
   const [research, setResearch] = useState();
   const test1 = useParams();
-  console.log(test1)
+  console.log(test1);
 
   function searchclick() {
     // if(Data.filter((sen) => sen.name.includes(""))){
@@ -39,8 +39,8 @@ export default function Nav() {
     // }else if(Data.filter((sen) => sen.name.includes(test1))){
     //   navigate(`/search/${research}`)
     // };
-    if(research !== "" || research !== undefined || research !== null){
-      navigate(`/search/${research}`)
+    if (research !== "" || research !== undefined || research !== null) {
+      navigate(`/search/${research}`);
     }
   }
 
@@ -61,15 +61,28 @@ export default function Nav() {
         </div>
         <div className="allsearch">
           <form onSubmit={searchclick}>
-            <input className="search" placeholder="Serach any things" onChange={(e) => setResearch(e.target.value)}></input>
-            <button className="searchBtn" type="submit">Search</button>
+            <input
+              className="search"
+              placeholder="Serach any things"
+              onChange={(e) => setResearch(e.target.value)}
+            ></input>
+            <button className="searchBtn" type="submit">
+              Search
+            </button>
           </form>
         </div>
       </div>
       <div className="nav-right flex">
         <img src="../user.svg" alt="" />
         <button className="Signin">
-          
+          <div
+            type="button"
+            class="btn Signin"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Sign in 
+          </div>
 
           <div
             className="modal fade"
@@ -84,7 +97,7 @@ export default function Nav() {
                   <h1 className="modal-title fs-5" id="exampleModalLabel">
                     Modal title
                   </h1>
-                  <img src="../Loginlogo.svg" alt="pic"/>
+                  <img src="../Loginlogo.svg" alt="pic" />
                   <button
                     type="button"
                     className="btn-close"
@@ -117,7 +130,7 @@ export default function Nav() {
                 >
                   Нэвтрэх
                 </button>
-                <fieldset >
+                <fieldset>
                   <legend className="esvel">эсвэл</legend>
                   <p className="border"></p>
                 </fieldset>
