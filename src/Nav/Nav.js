@@ -7,21 +7,26 @@ export default function Nav() {
     { username: "Sandag", password: "123" },
     { username: "Dondog", password: "123" },
     { username: "Baldan", password: "123" },
+    { username: "Admin", password: "123" },
   ];
   const [userName, setuserName] = useState();
   const [userPassword, setuserPassword] = useState();
-  const [isLogged, setIsLogged] = useState(false)
+  // const [isLogged, setIsLogged] = useState(false)
   function sign() {
     lildata.map((use) => {
       if (userName === use.username && userPassword === use.password) {
-        setIsLogged(true)
+        if(userName === "Admin"){
+          navigate(`/Dashboard/AllDash`)
+        }else {
+          navigate("/profile")
+        }
       }
     });
-    if(isLogged){
-      navigate(`/product/a4bbe2cc`)
-    }else{
-      alert("hudlaa bna")
-    }
+    // if(isLogged){
+    //   navigate(`/product/a4bbe2cc`)
+    // }else{
+    //   alert("hudlaa bna")
+    // }
   }
 
   const [research, setResearch] = useState();
@@ -64,14 +69,7 @@ export default function Nav() {
       <div className="nav-right flex">
         <img src="../user.svg" alt="" />
         <button className="Signin">
-          <button
-            type="button"
-            className="btn login"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Sign in
-          </button>
+          
 
           <div
             className="modal fade"
@@ -86,7 +84,7 @@ export default function Nav() {
                   <h1 className="modal-title fs-5" id="exampleModalLabel">
                     Modal title
                   </h1>
-                  <img src="../Loginlogo.svg"/>
+                  <img src="../Loginlogo.svg" alt="pic"/>
                   <button
                     type="button"
                     className="btn-close"
