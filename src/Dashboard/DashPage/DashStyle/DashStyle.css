@@ -1,6 +1,6 @@
 .allDash {
     width: 1280px;
-    height: 100%;
+    /* height: 100%; */
     margin: 50px;
 }
 
@@ -20,4 +20,9 @@
     height: 100%;
     margin-top: 25px;
     background-color: white;
+}
+
+.containerof {
+    font-size: 18px;
+    
 }

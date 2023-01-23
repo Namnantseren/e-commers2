@@ -7,7 +7,7 @@ export default function leg() {
             <div className='flex leg'>
                 <div className='leftproduct'>
                     <div className='specialproduct'>
-                        <p className='specialp'>Special Product</p>
+                        <p className='specialp leg-left-parag'>Special Product</p>
                     </div>
                     <div>
                         <img src="../speaker.svg" alt="" />

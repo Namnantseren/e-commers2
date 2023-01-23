@@ -17,7 +17,7 @@ export default function Dash(){
 
       const navigate = useNavigate();
       function jumpmain() {
-        navigate(`/Dashboard`);
+        navigate(`/Dashboard/AllDash`);
       }
     return(
         <div className="nav-main-2">
@@ -32,8 +32,9 @@ export default function Dash(){
           </form>
         </div>
         <div>
-          <button onClick={(e) => navigate(`/`)}>
-            log out
+          <button onClick={(e) => navigate(`/`)} className="logout">
+            <img src="../logout.svg" alt="pic" />
+            Гарах
           </button>
         </div>
       </div>

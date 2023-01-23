@@ -13,12 +13,13 @@ export default function Nav() {
   const [userPassword, setuserPassword] = useState();
   // const [isLogged, setIsLogged] = useState(false)
   function sign() {
+
     lildata.map((use) => {
       if (userName === use.username && userPassword === use.password) {
         if (userName === "Admin") {
-          navigate(`/Dashboard/AllDash`);
+          return navigate(`/Dashboard/AllDash`);
         } else {
-          navigate("/profile");
+          return navigate("/profile");
         }
       }
     });
@@ -127,6 +128,7 @@ export default function Nav() {
                   type="button"
                   className="btn btn-primary nevtreh"
                   onClick={sign}
+                  data-bs-dismiss="modal"
                 >
                   Нэвтрэх
                 </button>

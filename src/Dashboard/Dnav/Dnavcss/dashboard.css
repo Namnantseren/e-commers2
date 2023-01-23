@@ -12,3 +12,13 @@
     background-color: #F5F5F5;
     border: 0;
 }
+
+.logout {
+    border: none;
+    position: absolute;
+    right: 0;
+    margin: 10px 50px 0px 0px;
+    width: 108px;
+    height: 40px;
+    border-radius: 12px;
+}

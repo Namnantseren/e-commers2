@@ -11,7 +11,7 @@ export default function Dashdash() {
                 <div className="allofdash">
                     <div className="allDash">
                         <div className="navofdash">
-                            <h1>Product</h1>
+                            <h1 className="containerofdd">Product</h1>
                         </div>
                         <div className="midofdash">
 

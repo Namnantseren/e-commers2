@@ -6,7 +6,7 @@ import { useEffect, useState} from "react";
 import '../Section/SectionStyle/style.css'
 
 export default function Search() {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
     // const navigate = useNavigate()
     useEffect(() => {
     setProducts(
@@ -14,7 +14,7 @@ export default function Search() {
     );
     }, []);
   let hha = useParams();
-  console.log(products);
+  console.log("products:" ,products);
 
     // function pop() {
     //     navigate(`/product/${single.item.id}`)
@@ -26,16 +26,17 @@ export default function Search() {
 
         <div className="d-flex midselector containerofnewcard">
         {products &&
-          products.map((single) => (
-            <div className='cards' >
-                    <div className="cardimg">
-                        <img src={single.image} alt="pic" />
+          products.map((product,index) => (
+            // <div className='cards' key={index} >
+            <div className='product' key={index} >
+                    <div className="cardimg product-image">
+                        <img src={product.image} alt="product image" />
                     </div>
-                    <div className='containerlilSelector flex'>
+                    <div className='containerlilSelector flex product-text'>
                         <div className="lilselector">
-                            <p className='first'>{single.title}</p>
-                            <p className='second'>{single.description.slice(0,50)}...</p>
-                            <p className='third'>price:{single.price}</p>
+                            <p className='first product-text-title'>{product.title}</p>
+                            <p className='second'>{product.description.slice(0,50)}...</p>
+                            <p className='third'>price:{product.price}</p>
                         </div>
                         <div className='innershopselector'>
                             <img src="../shopping.svg" alt="pic" />
