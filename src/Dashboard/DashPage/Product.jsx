@@ -27,6 +27,9 @@ export default function Dashdash() {
                                 <p>Категори</p>
                                 <p>:</p>
                             </div>
+                            <div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
