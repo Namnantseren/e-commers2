@@ -1,15 +1,17 @@
 import './SectionStyle/style.css'
-import { Data } from "../Data/Data"
+// import { Data } from "../Data/Data"
 import { useState } from 'react';
 import Card from "../Card/Card"
 
-export default function Section() {
-    const [input, setinput] = useState(Data);
+export default function Section(props) {
+    const { data } = props
+    console.log("Section :", data);
+    const [input, setinput] = useState();
     function changer(e){
         if(e.target.innerText === "All") {
-            setinput(Data);
+            setinput(data);
         } else {
-           let hoh = Data.filter((cate) =>  cate.category.includes(e.target.innerText))
+           let hoh = data.filter((cate) =>  cate.category.includes(e.target.innerText))
            setinput(hoh);
         }
     }
@@ -29,7 +31,7 @@ export default function Section() {
             </div>
             <div className='midselector flex'>
             <div className="midselector flex">
-            {input.map((item, index) => (
+            {data && data.map((item, index) => (
                 <div key={index}>
                     <Card item={item}/>
                 </div>

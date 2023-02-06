@@ -4,9 +4,9 @@ import "./ProductCard/Pro.css"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
 
-export default function ProductCard() {
-    const test = useParams( )
-    let dat =  Data.filter((hoho) => hoho.id.includes(test.id))
+export default function ProductCard({prop}) {
+    const test = useParams()
+    let dat =  prop.filter((hoho) => hoho.id.includes(test.id))
     return(
         <div>
             <Nav/>

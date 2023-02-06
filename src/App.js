@@ -11,13 +11,24 @@ import Orders from './Dashboard/DashPage/Orders'
 import Users from './Dashboard/DashPage/Users'
 import Moderator from './Dashboard/DashPage/Moderator'
 import Settings from './Dashboard/DashPage/Settings'
+import Section from './Section/Section';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 
 function App() {
+  const [data, setData] = useState();
+  useEffect(() => {
+      axios.get(`http://localhost:2030/users`)
+      .then((res) => setData(res.data))
+  }, []);
+  console.log("Orj irj bui data:",data);
+
   return (
     <div className="App">
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/product/:id' element={<ProductCard/>}/>
+          <Route path='/' element={<Home data={data}/>}/>
+          <Route path='/product/:id' element={<ProductCard data={data}/>}/>
           <Route path='/search/:name' element={<Search/>}/>
           <Route path='/Home' element={<Home/>}/>
           <Route path='/Profile' element={<Profile/>}/>
@@ -25,11 +36,12 @@ function App() {
         </Routes>
         <Routes>
           <Route path='/Dashboard/AllDash' element={<AllDash/>}/>
-          <Route path='/Dashboard/Product' element={<Product/>}/>
+          <Route path='/Dashboard/Product' element={<Product />}/>
           <Route path='/Dashboard/Orders' element={<Orders/>}/>
           <Route path='/Dashboard/Users' element={<Users/>}/>
           <Route path='/Dashboard/Moderator' element={<Moderator/>}/>
           <Route path='/Dashboard/Settings' element={<Settings/>}/>
+          <Route element={<Section data={data}/>}/>
         </Routes>
     </div>
   );

@@ -1,8 +1,10 @@
+import Section from "../../Section/Section"
 import Dashboard from "../Dashside/Dashside"
 import Dashboardnav from "../Dnav/Dashboardnav"
 import './DashStyle/DashStyle.css'
 
 export default function Dashdash() {
+
     return (
         <div>
             <Dashboardnav/>

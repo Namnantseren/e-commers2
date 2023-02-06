@@ -30,7 +30,7 @@ export default function Search() {
             // <div className='cards' key={index} >
             <div className='product' key={index} >
                     <div className="cardimg product-image">
-                        <img src={product.image} alt="product image" />
+                        <img src={product.image} alt="pic" />
                     </div>
                     <div className='containerlilSelector flex product-text'>
                         <div className="lilselector">

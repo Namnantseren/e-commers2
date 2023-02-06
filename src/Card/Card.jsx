@@ -1,24 +1,25 @@
 import { useNavigate } from 'react-router-dom'
 import '../Section/SectionStyle/style.css'
 
-export default function Card(props) {
+export default function Card(prop) {
     const navigate = useNavigate()
+    const {item} = prop
     function pop() {
-        navigate(`/product/${props.item.id}`)
+        navigate(`/product/${item.id}`)
     }
     return(
         <div className='containerofcard'>
             <div className='cards' onClick={pop}>
                     <div className="cardimg">
-                        <img src={props.item.image} alt="pic" />
+                        <img src={item.image} alt="pic" />
                     </div>
                     <div className='containerlilSelector flex'>
                         <div className="lilselector">
-                            <p className='first'>{props.item.title}</p>
-                            <p className='third'>{props.item.name}</p>
-                            <p>{props.item.category}</p>
+                            <p className='first'>{item.title}</p>
+                            <p className='third'>{item.name}</p>
+                            <p>{item.category}</p>
                             {/* <p className='second'>{props.item.description.slice(0,50)}...</p> */}
-                            <p className='third'>price:{props.item.price}</p>
+                            <p className='third'>price:{item.price}</p>
                         </div>
                         <div className='innershopselector'>
                             <img src="shopping.svg" alt="pic" />

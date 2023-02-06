@@ -142,7 +142,7 @@ export default function Nav() {
                     className="btn btn-secondary burtguuleh"
                     data-bs-dismiss="modal"
                   >
-                    Бүртгүүлэх
+                    Бүртгүүлэх``
                   </button>
                 </div>
               </div>
