@@ -115,3 +115,26 @@
     font-size: 33px;
     font-weight: 600;
 }
+
+
+/*            Order                 */
+
+.order_order {
+    position: absolute;
+    bottom: 0;
+    margin: 0px 15px 30px 15px;
+}
+
+.order_btn {
+    width: 435px;
+    height: 61px;
+}
+
+.offcanvas.offcanvas-end{
+    width: 499px;
+    border-radius: 8px;
+}
+
+.myBasket {
+    margin: 0px 15px 0px 15px;
+}

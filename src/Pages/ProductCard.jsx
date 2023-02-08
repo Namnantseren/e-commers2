@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { Data } from "../Data/Data"
+// import { Data } from "../Data/Data"
 import "./ProductCard/Pro.css"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./NavStyle/NavStyle.css";
+import Order from "../Pages/Order"
 
 export default function Nav() {
   const lildata = [
@@ -78,7 +79,7 @@ export default function Nav() {
         <button className="Signin">
           <div
             type="button"
-            class="btn Signin"
+            className="btn Signin"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
@@ -149,7 +150,8 @@ export default function Nav() {
             </div>
           </div>
         </button>
-        <img src="../shopping.svg" alt="" className="shopping" />
+        {/* <img src="../shopping.svg" alt="" className="shopping" /> */}
+        <Order/>
       </div>
     </div>
   );
