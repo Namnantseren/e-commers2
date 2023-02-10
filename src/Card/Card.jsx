@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import '../Section/SectionStyle/style.css'
 
-export default function Card(prop) {
+export default function Card({item}) {
     const navigate = useNavigate()
-    const {item} = prop
+    // const {item} = prop
     function pop() {
         navigate(`/product/${item.id}`)
     }
@@ -22,7 +22,7 @@ export default function Card(prop) {
                             <p className='third'>price:{item.price}</p>
                         </div>
                         <div className='innershopselector'>
-                            <img src="shopping.svg" alt="pic" />
+                            <img src="../shoppingCard.svg" alt="pic" />
                         </div>
                     </div>
                 </div>

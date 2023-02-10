@@ -3,10 +3,9 @@ import './SectionStyle/style.css'
 import { useState } from 'react';
 import Card from "../Card/Card"
 
-export default function Section(props) {
-    const { data } = props
+export default function Section({data}) {
     console.log("Section :", data);
-    const [input, setinput] = useState();
+    const [input, setinput] = useState(data);
     function changer(e){
         if(e.target.innerText === "All") {
             setinput(data);
@@ -31,7 +30,7 @@ export default function Section(props) {
             </div>
             <div className='midselector flex'>
             <div className="midselector flex">
-            {data && data.map((item, index) => (
+            {input && input.map((item, index) => (
                 <div key={index}>
                     <Card item={item}/>
                 </div>

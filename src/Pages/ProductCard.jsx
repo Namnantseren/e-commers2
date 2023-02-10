@@ -3,33 +3,50 @@ import { useParams } from "react-router-dom"
 import "./ProductCard/Pro.css"
 import Nav from "../Nav/Nav"
 import Footer from "../Footer/Footer"
+import { useContext } from "react"
+import { Productcontext } from "../App"
+import { useState } from "react"
 
-export default function ProductCard({prop}) {
+export default function ProductCard() {
+    const {data} = useContext(Productcontext);
     const test = useParams()
-    let dat =  prop.filter((hoho) => hoho.id.includes(test.id))
+    let dat = data && data.filter((hoho) => hoho.id ===(test.id))
+    console.log("Productcard :", dat);
+    
+    // const [x , setX] = useState(data[0].stock)
+
+    function addBasket() {
+        let basketItems = [];
+        if(localStorage.getItem("basket")) {
+            basketItems = JSON.parse(localStorage.getItem("basket"))
+        }
+        basketItems.push(...basketItems , {id: dat[0].id});
+        localStorage.setItem("basket", JSON.stringify(basketItems))
+    }
+
     return(
         <div>
             <Nav/>
             <div className="containerofprocard">
                 <div className="flex procard">
                     <div className="proimg flex">
-                        <img src={dat[0].image} alt="pic" />
+                        <img src={dat && dat[0].image} alt="pic" />
                         <div className="lil-pro-img flex">
                             <div className="lil-pro-img-left">
-                                <img src={dat[0].image} alt="pic" />
+                                <img src={dat &&dat[0].image} alt="pic" />
                             </div>
                             <div>
-                                <img src={dat[0].image} alt="pic" />
+                                <img src={dat &&dat[0].image} alt="pic" />
                             </div>
                         </div>
                     </div>
                     <div className="proinfo">
-                        <h3>{dat[0].name}</h3>
+                        <h3>{dat && dat[0].name}</h3>
                         <div className="proprice">
-                            <p>${dat[0].price}</p>
+                            <p>${dat && dat[0].price}</p>
                         </div>
-                        <p>{dat[0].category}</p>
-                        <p>{dat[0].description}</p>
+                        <p>{dat && dat[0].category}</p>
+                        <p>{dat && dat[0].description}</p>
                         {/* <p>{dat[0].spec}</p> */}
                         {/* <div className="proprice">
                             <p>${dat[0].price}</p>
@@ -41,25 +58,25 @@ export default function ProductCard({prop}) {
                                 <p>Size:</p>
                                 <div className="flex">
                                     <p>Quantity:</p>
-                                    <button className="pro-signs">-</button>
+                                    <button className="pro-signs" >-</button>
                                     <div className="pro-number">
-                                        <input type="number" placeholder="0"/>
+                                        <input type="text"  />
                                     </div>
                                     <button className="pro-signs">+</button>
                                 </div>
                             </div>
-                            <button className="pro-double">Add to card</button>
+                            <button className="pro-double" onClick={addBasket}>Add to card</button>
                             <button className="pro-double pro-special-buy">Buy it now</button>
                         </div>
                         <div className="pro-border"></div>
                         <div>
                             <div className="flex">
                                 <p className="pro-bold">Sku:</p>
-                                <p>{dat[0].id}</p>
+                                <p>{dat && dat[0].id}</p>
                             </div>
                             <div className="flex">
                                 <p className="pro-bold">Category:</p>
-                                <p>{dat[0].category}</p>
+                                <p>{dat && dat[0].category}</p>
                             </div>
                             <div className="flex">
                                 <p className="pro-bold">Share:</p>

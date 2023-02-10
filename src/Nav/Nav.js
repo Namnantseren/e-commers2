@@ -12,9 +12,7 @@ export default function Nav() {
   ];
   const [userName, setuserName] = useState();
   const [userPassword, setuserPassword] = useState();
-  // const [isLogged, setIsLogged] = useState(false)
   function sign() {
-
     lildata.map((use) => {
       if (userName === use.username && userPassword === use.password) {
         if (userName === "Admin") {
@@ -24,11 +22,6 @@ export default function Nav() {
         }
       }
     });
-    // if(isLogged){
-    //   navigate(`/product/a4bbe2cc`)
-    // }else{
-    //   alert("hudlaa bna")
-    // }
   }
 
   const [research, setResearch] = useState();
@@ -36,20 +29,11 @@ export default function Nav() {
   console.log(test1);
 
   function searchclick() {
-    // if(Data.filter((sen) => sen.name.includes(""))){
-    //   navigate(`/`)
-    // }else if(Data.filter((sen) => sen.name.includes(test1))){
-    //   navigate(`/search/${research}`)
-    // };
     if (research !== "" || research !== undefined || research !== null) {
+      
       navigate(`/search/${research}`);
     }
   }
-
-  // function searchclick() {
-  //   Data.filter((sen) => sen.name.includes(test1))
-  //   navigate(`/search/${research}`)
-  // }
 
   const navigate = useNavigate();
   function jumpmain() {
