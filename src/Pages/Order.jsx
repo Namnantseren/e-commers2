@@ -7,14 +7,16 @@ export default function Example() {
   const { data } = useContext(Productcontext);
 
   const [show, setShow] = useState(false);
+  const [removeList, setRemoveList] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   let basketitem = JSON.parse(localStorage.getItem("basket"));
-
-  let basketProduct =
-    data && data.filter((hoho) => basketitem.find((a) => a.id === hoho.id));
+  
+  //Remover------------------------------
+  let basketProduct = data && data.filter((hoho) => basketitem.find((basket) => basket.id === hoho.id));
   console.log("basket prod", basketProduct);
+  
 
   return (
     <>
@@ -29,7 +31,7 @@ export default function Example() {
         className="Offcanvas"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div>
@@ -39,15 +41,22 @@ export default function Example() {
                 <p className="empty_basket">Сагс хоослох</p>
               </div>
               {basketProduct ? (
-                <>
-                  <div className="containerOfBasket">
-                    <div className="basketEntred_img">
-                      <img src={basketProduct && basketProduct.map((a) => a.image)} alt="" />
+                basketProduct.map((basket, index) => {
+                  return (
+                    <div className="containerOfBasket d-flex" key={index}>
+                      <div className="basketEntred_img">
+                        <img src={basket.image} alt="pic" />
+                      </div>
+                      <div>
+                        <div className="basketInfo">
+                          <div>Product Name : {basket.name}</div>
+                          <div>Price: {basket.stock}</div>
+                        </div>
+                      </div>
+                      <button className="basketDeleter" onClick={() => setRemoveList(basketProduct.filter(basket.id !== basket.name))}>X</button>
                     </div>
-                    {basketProduct && basketProduct.map((a) => a.name)}
-                    {basketProduct && basketProduct.map((a) => a.stock)}
-                  </div>
-                </>
+                  );
+                })
               ) : (
                 <div className="pasket d-flex">
                   <img src="../pasket.svg" alt="pic" />

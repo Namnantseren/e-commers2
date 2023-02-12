@@ -76,16 +76,21 @@
     margin-top: 30px;
 }
 
-.pro-number input {
+.pro-number button{
     height: 32px;
     width: 63px;
-    border: 3px solid #ACACAC;
+    border: 1px solid #ACACAC;
     /* margin: auto; */
+}
+
+.pro-left-signs {
+    margin-left: 15px;
 }
 
 .pro-signs {
     width: 35px;
     height: 32px;
+    border: 1px solid #ACACAC;
 }
 
 .pro-zero {
@@ -156,15 +161,37 @@
 .empty_basket {
     color: #003585;
     border-bottom: 1px solid #003585;
+    cursor: pointer;
+}
+
+.basketEntred_img {
+    padding: 15px;
 }
 
 .basketEntred_img img {
     width: 85px;
     height: 85px;
+    border-radius: 8px;
 }
 
 .containerOfBasket {
     width: 435px;
     height: 117px;
     border:1px solid #D9D9D9;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.basketInfo {
+    margin-top: 10px;
+}
+
+.basketDeleter {
+    width: 13.39px;
+    height: 13.39px;
+    border: 0;
+    position: absolute;
+    right: 0;
+    margin: 5px 65px 0px 0px;
+    background-color: white;
 }
