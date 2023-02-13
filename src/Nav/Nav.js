@@ -26,7 +26,6 @@ export default function Nav() {
 
   const [research, setResearch] = useState();
   const test1 = useParams();
-  console.log(test1);
 
   function searchclick() {
     if (research !== "" || research !== undefined || research !== null) {

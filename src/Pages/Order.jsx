@@ -1,22 +1,46 @@
 import React, { useContext, useState } from "react";
+import { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Productcontext } from "../App";
 
 export default function Example() {
-  const { data } = useContext(Productcontext);
-
+  const { data , basketItems} = useContext(Productcontext);
   const [show, setShow] = useState(false);
-  const [removeList, setRemoveList] = useState();
-
+  const [basketProduct, setBasketProduct] = useState([]);
+  const [basketItem, setBasketItem] = useState(
+    basketItems
+  );
+console.log("oreder : "  , basketItems);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  let basketitem = JSON.parse(localStorage.getItem("basket"));
-  
   //Remover------------------------------
-  let basketProduct = data && data.filter((hoho) => basketitem.find((basket) => basket.id === hoho.id));
-  console.log("basket prod", basketProduct);
+
+  function basketRemover(id) {
+    setBasketItem(basketItem.filter((prod) => prod.id !== id));
+  }
   
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(basketItem));
+    const filteredData =
+    data &&
+    data.filter((product) =>
+      basketItem?.find((basket) => basket.id === product.id)
+    );
+    setBasketProduct(filteredData);
+  }, [basketItem]);
+
+  useEffect(() => {
+    console.log("baksetItem : ", basketItem);
+    const filteredData =
+      data &&
+      data.filter((product) =>
+        basketItem?.find((basket) => basket.id === product.id)
+      );
+    console.log("fitlered DAta : ", filteredData);
+    console.log(" DAta : ", data);
+    setBasketProduct(filteredData);
+  }, [data]);
 
   return (
     <>
@@ -43,17 +67,25 @@ export default function Example() {
               {basketProduct ? (
                 basketProduct.map((basket, index) => {
                   return (
-                    <div className="containerOfBasket d-flex" key={index}>
+                    <div
+                      className="containerOfBasket position-relative d-flex"
+                      key={index}
+                    >
                       <div className="basketEntred_img">
                         <img src={basket.image} alt="pic" />
                       </div>
                       <div>
                         <div className="basketInfo">
                           <div>Product Name : {basket.name}</div>
-                          <div>Price: {basket.stock}</div>
+                          <div>Price: ${basket.stock}</div>
                         </div>
                       </div>
-                      <button className="basketDeleter" onClick={() => setRemoveList(basketProduct.filter(basket.id !== basket.name))}>X</button>
+                      <button
+                        className="basketDeleter"
+                        onClick={() => basketRemover(basket.id)}
+                      >
+                        X
+                      </button>
                     </div>
                   );
                 })

@@ -8,24 +8,23 @@ import { Productcontext } from "../App";
 import { useState } from "react";
 
 export default function ProductCard() {
-  const { data } = useContext(Productcontext);
+  const { data , basketItems, setBasketItems} = useContext(Productcontext);
   const test = useParams();
   let dat = data && data.filter((hoho) => hoho.id === test.id);
-  console.log("Productcard :", dat);
+  //   console.log("Productcard :", dat);
   const [addNumber, setAddNumber] = useState(1);
 
   // const [x , setX] = useState(data[0].stock)
 
   function addBasket() {
-    let basketItems = [];
     if (localStorage.getItem("basket")) {
-      basketItems = JSON.parse(localStorage.getItem("basket"));
+        let test = JSON.parse(localStorage.getItem("basket"))
+        setBasketItems(test)
     }
-    basketItems.push(...basketItems, { id: dat[0].id });
+    console.log("basket items : " , basketItems);
+    setBasketItems([...basketItems, { id: dat[0].id }])
     localStorage.setItem("basket", JSON.stringify(basketItems));
   }
-
-
 
   return (
     <div>
@@ -64,7 +63,12 @@ export default function ProductCard() {
                   {addNumber > 0 && addNumber <= 100 && (
                     <>
                       {addNumber > 1 ? (
-                         (<button className="pro-signs pro-left-signs" onClick={() => setAddNumber(addNumber - 1)}>-</button>)
+                        <button
+                          className="pro-signs pro-left-signs"
+                          onClick={() => setAddNumber(addNumber - 1)}
+                        >
+                          -
+                        </button>
                       ) : (
                         <button className="pro-signs pro-left-signs">-</button>
                       )}
@@ -72,7 +76,12 @@ export default function ProductCard() {
                         <button>{addNumber}</button>
                       </div>
                       {addNumber < 100 && (
-                        <button className="pro-signs" onClick={() => setAddNumber(addNumber + 1)}>+</button>
+                        <button
+                          className="pro-signs"
+                          onClick={() => setAddNumber(addNumber + 1)}
+                        >
+                          +
+                        </button>
                       )}
                     </>
                   )}

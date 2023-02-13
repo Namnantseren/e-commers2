@@ -19,14 +19,25 @@ export const Productcontext = createContext();
 
 function App() {
   const [data, setData] = useState();
+  const [basketItems, setBasketItems] = useState([]);
   useEffect(() => {
     axios.get(`http://localhost:2030/users`).then((res) => setData(res.data));
+
+    
   }, []);
-  console.log("Orj irj bui data:", data);
+  
+  useEffect(()=>{
+    if (localStorage.getItem("basket")) {
+      setBasketItems(JSON.parse(localStorage.getItem("basket")));
+    }
+    console.log("basketItems : " , basketItems);
+
+  }, [])
+  // console.log("Orj irj bui data:", data);
 
   return (
     <div className="App">
-      <Productcontext.Provider value={{ data }}>
+      <Productcontext.Provider value={{ data, setBasketItems, basketItems }}>
         <Routes>
           <Route path="/" element={<Home data={data} />} />
           <Route path="/product/:id" element={<ProductCard data={data} />} />
