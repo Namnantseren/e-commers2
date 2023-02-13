@@ -5,28 +5,26 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { Productcontext } from "../App";
 
 export default function Example() {
-  const { data , basketItems} = useContext(Productcontext);
+  const { data, basketItems } = useContext(Productcontext);
   const [show, setShow] = useState(false);
   const [basketProduct, setBasketProduct] = useState([]);
-  const [basketItem, setBasketItem] = useState(
-    basketItems
-  );
-console.log("oreder : "  , basketItems);
+  const [basketItem, setBasketItem] = useState(basketItems);
+
+  console.log("order : ", basketItems);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  //Remover------------------------------
 
   function basketRemover(id) {
     setBasketItem(basketItem.filter((prod) => prod.id !== id));
   }
-  
+
   useEffect(() => {
     localStorage.setItem("basket", JSON.stringify(basketItem));
     const filteredData =
-    data &&
-    data.filter((product) =>
-      basketItem?.find((basket) => basket.id === product.id)
-    );
+      data &&
+      data.filter((product) =>
+        basketItem?.find((basket) => basket.id === product.id)
+      );
     setBasketProduct(filteredData);
   }, [basketItem]);
 

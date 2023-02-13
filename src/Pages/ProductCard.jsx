@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-// import { Data } from "../Data/Data"
 import "./ProductCard/Pro.css";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
@@ -11,10 +10,7 @@ export default function ProductCard() {
   const { data , basketItems, setBasketItems} = useContext(Productcontext);
   const test = useParams();
   let dat = data && data.filter((hoho) => hoho.id === test.id);
-  //   console.log("Productcard :", dat);
   const [addNumber, setAddNumber] = useState(1);
-
-  // const [x , setX] = useState(data[0].stock)
 
   function addBasket() {
     if (localStorage.getItem("basket")) {
