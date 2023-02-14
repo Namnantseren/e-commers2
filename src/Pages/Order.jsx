@@ -17,28 +17,52 @@ export default function Example() {
   function basketRemover(id) {
     setBasketItem(basketItem.filter((prod) => prod.id !== id));
   }
+  
+  // useEffect(() => {
+  //   localStorage.setItem("basket", JSON.stringify(basketItem))
+  // })
 
-  useEffect(() => {
-    localStorage.setItem("basket", JSON.stringify(basketItem));
-    const filteredData =
-      data &&
-      data.filter((product) =>
-        basketItem?.find((basket) => basket.id === product.id)
-      );
-    setBasketProduct(filteredData);
-  }, [basketItem]);
+  // console.log("BasketProduct :", basketProduct);
 
-  useEffect(() => {
-    console.log("baksetItem : ", basketItem);
-    const filteredData =
-      data &&
-      data.filter((product) =>
-        basketItem?.find((basket) => basket.id === product.id)
-      );
-    console.log("fitlered DAta : ", filteredData);
-    console.log(" DAta : ", data);
-    setBasketProduct(filteredData);
-  }, [data]);
+
+
+  // useEffect(() => {
+  //   localStorage.setItem("basket", JSON.stringify(basketItem));
+  //   const filteredData =
+  //     data &&
+  //     data.filter((product) =>
+  //       basketItem?.find((basket) => basket.id === product.id)
+  //     );
+  //   setBasketProduct(filteredData);
+  // }, [basketItem]);
+
+
+
+  //  let  basketProduct = data &&
+  // data.filter((product) =>
+  //   basketItem && basketItem.find((findProduct) => findProduct.id === product.id)
+  //   );
+  //   function basketRemover(id){
+  //     let deleteHandler =
+  //     basketItem && basketItem.filter((delProd) => delProd.id !== id);
+  //   localStorage.setItem("basket", JSON.stringify(deleteHandler));
+  //   }
+
+  // useEffect(() => {
+  //   console.log("baksetItem : ", basketItem);
+  //   const filteredData =
+  //     data &&
+  //     data.filter((product) =>
+  //       basketItem?.find((basket) => basket.id === product.id)
+  //     );
+  //   console.log("fitlered DAta : ", filteredData);
+  //   console.log(" DAta : ", data);
+  //   setBasketProduct(filteredData);
+  // }, [data]);
+
+  function clearBusket() {
+    localStorage.removeItem("basket")
+  }
 
   return (
     <>
@@ -60,7 +84,7 @@ export default function Example() {
             <div>
               <div className="d-flex justify-content-between myBasket">
                 <p className="my_basket">Таны сагс</p>
-                <p className="empty_basket">Сагс хоослох</p>
+                <p className="empty_basket" onClick={clearBusket}>Сагс хоослох</p>
               </div>
               {basketProduct ? (
                 basketProduct.map((basket, index) => {

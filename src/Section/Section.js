@@ -8,12 +8,14 @@ export default function Section({data}) {
     const [input, setinput] = useState(data);
     function changer(e){
         if(e.target.innerText === "All") {
-            setinput(data);
+            setinput(data)
         } else {
            let hoh = data.filter((cate) =>  cate.category.includes(e.target.innerText))
            setinput(hoh);
         }
     }
+
+    console.log("input :",input)
     return(
         <div>
             <div className='flex containerSelector'>
@@ -34,6 +36,7 @@ export default function Section({data}) {
                 <div key={index}>
                     <Card item={item}/>
                 </div>
+            
             ))}
             </div>
             </div>

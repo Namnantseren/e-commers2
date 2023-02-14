@@ -13,14 +13,32 @@ export default function ProductCard() {
   const [addNumber, setAddNumber] = useState(1);
 
   function addBasket() {
+    let baskets = [];
     if (localStorage.getItem("basket")) {
-        let test = JSON.parse(localStorage.getItem("basket"))
-        setBasketItems(test)
+      baskets = JSON.parse(localStorage.getItem("basket"));
+      const findData = baskets.find((product) => product.id === dat[0].id);
+      if (findData) {
+        baskets[baskets.indexOf(findData)].stock =
+          baskets[baskets.indexOf(findData)].stock + addNumber;
+        baskets = [...baskets];
+      } else {
+        baskets = [...baskets, { id: dat[0].id, stock: addNumber }];
+      }
+    } else {
+      baskets = [...baskets, { id: dat[0].id, stock: addNumber }];
     }
-    console.log("basket items : " , basketItems);
-    setBasketItems([...basketItems, { id: dat[0].id }])
-    localStorage.setItem("basket", JSON.stringify(basketItems));
+    localStorage.setItem("basket", JSON.stringify(baskets))
   }
+
+  // function addBasket() {
+  //   if (localStorage.getItem("basket")) {
+  //       let test = JSON.parse(localStorage.getItem("basket"))
+  //       setBasketItems(test)
+  //   }
+  //   console.log("basket items : " , basketItems);
+  //   setBasketItems([...basketItems, { id: dat[0].id }])
+  //   localStorage.setItem("basket", JSON.stringify(basketItems));
+  // }
 
   return (
     <div>

@@ -13,6 +13,7 @@ import Moderator from "./Dashboard/DashPage/Moderator";
 import Settings from "./Dashboard/DashPage/Settings";
 import Section from "./Section/Section";
 import axios from "axios";
+import Slide from "./Slider/Slide";
 // import { useEffect, useState } from 'react';
 import { useEffect, useState, createContext } from "react";
 export const Productcontext = createContext();
@@ -22,11 +23,9 @@ function App() {
   const [basketItems, setBasketItems] = useState([]);
   useEffect(() => {
     axios.get(`http://localhost:2030/users`).then((res) => setData(res.data));
-
-    
   }, []);
   
-  useEffect(()=>{
+  useEffect(() => {
     if (localStorage.getItem("basket")) {
       setBasketItems(JSON.parse(localStorage.getItem("basket")));
     }
@@ -54,6 +53,7 @@ function App() {
           <Route path="/Dashboard/Moderator" element={<Moderator />} />
           <Route path="/Dashboard/Settings" element={<Settings />} />
           <Route element={<Section data={data} />} />
+          <Route element={<Slide/>}/>
         </Routes>
       </Productcontext.Provider>
     </div>
