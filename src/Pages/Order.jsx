@@ -24,21 +24,19 @@ export default function Example() {
 
   // console.log("BasketProduct :", basketProduct);
 
-
-
-  // useEffect(() => {
-  //   localStorage.setItem("basket", JSON.stringify(basketItem));
-  //   const filteredData =
-  //     data &&
-  //     data.filter((product) =>
-  //       basketItem?.find((basket) => basket.id === product.id)
-  //     );
-  //   setBasketProduct(filteredData);
-  // }, [basketItem]);
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(basketItem));
+    const filteredData =
+      data &&
+      data.filter((product) =>
+        basketItem?.find((basket) => basket.id === product.id)
+      );
+    setBasketProduct(filteredData);
+  }, [basketItem]);
 
 
 
-  //  let  basketProduct = data &&
+  //  basketProduct = data &&
   // data.filter((product) =>
   //   basketItem && basketItem.find((findProduct) => findProduct.id === product.id)
   //   );
@@ -48,17 +46,17 @@ export default function Example() {
   //   localStorage.setItem("basket", JSON.stringify(deleteHandler));
   //   }
 
-  // useEffect(() => {
-  //   console.log("baksetItem : ", basketItem);
-  //   const filteredData =
-  //     data &&
-  //     data.filter((product) =>
-  //       basketItem?.find((basket) => basket.id === product.id)
-  //     );
-  //   console.log("fitlered DAta : ", filteredData);
-  //   console.log(" DAta : ", data);
-  //   setBasketProduct(filteredData);
-  // }, [data]);
+  useEffect(() => {
+    console.log("baksetItem : ", basketItem);
+    const filteredData =
+      data &&
+      data.filter((product) =>
+        basketItem?.find((basket) => basket.id === product.id)
+      );
+    console.log("fitlered DAta : ", filteredData);
+    console.log(" DAta : ", data);
+    setBasketProduct(filteredData);
+  }, [data]);
 
   function clearBusket() {
     localStorage.removeItem("basket")

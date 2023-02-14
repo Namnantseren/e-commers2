@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./NavStyle/NavStyle.css";
-import Order from "../Pages/Order"
+import Order from "../Pages/Order";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import axios from "axios";
 
 export default function Nav() {
   const lildata = [
@@ -12,6 +15,11 @@ export default function Nav() {
   ];
   const [userName, setuserName] = useState();
   const [userPassword, setuserPassword] = useState();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShowOne = () => setShow(true);
   function sign() {
     lildata.map((use) => {
       if (userName === use.username && userPassword === use.password) {
@@ -29,9 +37,20 @@ export default function Nav() {
 
   function searchclick() {
     if (research !== "" || research !== undefined || research !== null) {
-      
       navigate(`/search/${research}`);
     }
+  }
+
+  function saveRegister(e) {
+    e.preventDefault();
+    axios.post("http://localhost:2030/registerUser", {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      password: e.target.password.value,
+      repassword: e.target.repassword.value
+    })
+
+    console.log("Name :", e.target.name.value);
   }
 
   const navigate = useNavigate();
@@ -66,7 +85,7 @@ export default function Nav() {
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
-            Sign in 
+            Sign in
           </div>
 
           <div
@@ -125,16 +144,51 @@ export default function Nav() {
                     type="button"
                     className="btn btn-secondary burtguuleh"
                     data-bs-dismiss="modal"
+                    onClick={handleShowOne}
                   >
-                    Бүртгүүлэх``
+                    Бүртгүүлэх
                   </button>
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Бүртгүүлэх</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <div>
+                        <form onSubmit={saveRegister}>
+                          <div>
+                            <span>Нэр эсвэл овог</span>
+                            <input type="text"  placeholder="Нэр" className="registerClass" name="name"/>
+                          </div>
+                          <div>
+                            <span>e-mail  phone-number</span>
+                            <input type="email"  placeholder="e-mail" className="registerClass" name="email"/>
+                          </div>
+                          <div>
+                            <span>password</span>
+                            <input type="text"  placeholder="password" className="registerClass" name="password"/>
+                          </div>
+                          <div>
+                            <span>Re-password</span>
+                            <input type="text"  placeholder="Re-password" className="registerClass" name="repassword"/>
+                          </div>
+                          <button
+                          type="submit"
+                          className="btn btn-primary nevtreh"
+                          data-bs-dismiss="modal"
+                        >
+                          Хадгалах
+                        </button>
+                        </form>
+                      </div>
+                
+                    </Modal.Body>
+                  </Modal>
                 </div>
               </div>
             </div>
           </div>
         </button>
-        {/* <img src="../shopping.svg" alt="" className="shopping" /> */}
-        <Order/>
+        <Order />
       </div>
     </div>
   );
