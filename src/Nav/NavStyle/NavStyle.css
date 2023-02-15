@@ -87,6 +87,10 @@
     border: 0;
 }
 
+.search::placeholder {
+    padding-left: 20px;
+}
+
 
 
 .allsearch {

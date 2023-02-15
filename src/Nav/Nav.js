@@ -67,7 +67,7 @@ export default function Nav() {
           <form onSubmit={searchclick}>
             <input
               className="search"
-              placeholder="Serach any things"
+              placeholder="Search any things"
               onChange={(e) => setResearch(e.target.value)}
             ></input>
             <button className="searchBtn" type="submit">

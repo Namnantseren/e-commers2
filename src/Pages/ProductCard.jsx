@@ -5,12 +5,16 @@ import Footer from "../Footer/Footer";
 import { useContext } from "react";
 import { Productcontext } from "../App";
 import { useState } from "react";
+import Card from "../Card/Card";
 
 export default function ProductCard() {
   const { data , basketItems, setBasketItems} = useContext(Productcontext);
+  const [relate, setRelate] = useState(data);
   const test = useParams();
   let dat = data && data.filter((hoho) => hoho.id === test.id);
   const [addNumber, setAddNumber] = useState(1);
+
+  let testRel = relate && relate.filter((run) => run.category === dat[0].category )
 
   function addBasket() {
     let baskets = [];
@@ -132,6 +136,19 @@ export default function ProductCard() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="containerProduct">
+        <div className="relatedProduct">
+          <p >Related Product</p>
+        </div>
+        <div className="d-flex flex-wrap gap-3">
+          {testRel && testRel.slice(0,4).map((item, index) => (
+            <div key={index}>
+              <Card item={item} />
+            </div>
+          ))}
         </div>
       </div>
       <Footer />

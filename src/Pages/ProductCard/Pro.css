@@ -121,6 +121,14 @@
     font-weight: 600;
 }
 
+.blue_order {
+    background-color: #003585;
+}
+
+.gray_order{
+    background-color: #D9D9D9;
+}
+
 
 /*            Order                 */
 
@@ -192,10 +200,31 @@
     border: 0;
     position: absolute;
     right: 0;
-    margin: 5px 65px 0px 0px;
+    margin: 5px 25px 0px 0px;
     background-color: white;
 }
 
 .registerClass {
     width: 450px;
 }
+
+
+/*          relatedProduct          */
+
+.relatedProduct {
+    width: 225px;
+    height: 41px;
+    font-size: 27.38px;
+    font-weight: bold;
+    color: #1B5A7D;
+}
+
+.containerProduct {
+    width: 1314px;
+    height: 450px;
+    margin: auto;
+    padding-top: 100px;
+}
+
+
+/*          relatedProduct          */

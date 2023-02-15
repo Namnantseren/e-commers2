@@ -7,34 +7,36 @@ import { Productcontext } from "../App";
 export default function Example() {
   const { data, basketItems } = useContext(Productcontext);
   const [show, setShow] = useState(false);
-  const [basketProduct, setBasketProduct] = useState([]);
+  const [basketProduct, setBasketProduct] = useState(data);
   const [basketItem, setBasketItem] = useState(basketItems);
+
+  console.log("basketProduct shyy :", basketProduct);
 
   console.log("order : ", basketItems);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   function basketRemover(id) {
-    setBasketItem(basketItem.filter((prod) => prod.id !== id));
+    // setBasketItem(basketItem.filter((prod) => prod.id !== id));
+    localStorage.setItem("basket",JSON.stringify(basketItem.filter((prod) => prod.id !== id)))
   }
-  
+
+
   // useEffect(() => {
   //   localStorage.setItem("basket", JSON.stringify(basketItem))
   // })
 
   // console.log("BasketProduct :", basketProduct);
 
-  useEffect(() => {
-    localStorage.setItem("basket", JSON.stringify(basketItem));
-    const filteredData =
-      data &&
-      data.filter((product) =>
-        basketItem?.find((basket) => basket.id === product.id)
-      );
-    setBasketProduct(filteredData);
-  }, [basketItem]);
-
-
+  // useEffect(() => {
+  //   localStorage.setItem("basket", JSON.stringify(basketItem));
+  //   const filteredData =
+  //     data &&
+  //     data.filter((product) =>
+  //       basketItem?.find((basket) => basket.id === product.id)
+  //     );
+  //   setBasketProduct(filteredData);
+  // }, [basketItem]);
 
   //  basketProduct = data &&
   // data.filter((product) =>
@@ -48,18 +50,20 @@ export default function Example() {
 
   useEffect(() => {
     console.log("baksetItem : ", basketItem);
-    const filteredData =
+    let filteredData =
       data &&
       data.filter((product) =>
         basketItem?.find((basket) => basket.id === product.id)
       );
+
     console.log("fitlered DAta : ", filteredData);
     console.log(" DAta : ", data);
     setBasketProduct(filteredData);
-  }, [data]);
+
+  }, []);
 
   function clearBusket() {
-    localStorage.removeItem("basket")
+    localStorage.removeItem("basket");
   }
 
   return (
@@ -82,7 +86,9 @@ export default function Example() {
             <div>
               <div className="d-flex justify-content-between myBasket">
                 <p className="my_basket">Таны сагс</p>
-                <p className="empty_basket" onClick={clearBusket}>Сагс хоослох</p>
+                <p className="empty_basket" onClick={clearBusket}>
+                  Сагс хоослох
+                </p>
               </div>
               {basketProduct ? (
                 basketProduct.map((basket, index) => {
@@ -110,8 +116,17 @@ export default function Example() {
                   );
                 })
               ) : (
-                <div className="pasket d-flex">
-                  <img src="../pasket.svg" alt="pic" />
+                <div>
+                  <div className="pasket d-flex">
+                    <img src="../pasket.svg" alt="pic" />
+                  </div>
+                  <div className="order_order">
+                    <div className="d-flex justify-content-between">
+                      <p>Нийт дүн</p>
+                      <p>$</p>
+                    </div>
+                    <button className="order_btn gray_order">Захиалах</button>
+                  </div>
                 </div>
               )}
             </div>
@@ -121,7 +136,7 @@ export default function Example() {
               <p>Нийт дүн</p>
               <p>$</p>
             </div>
-            <button className="order_btn">Захиалах</button>
+            <button className="order_btn blue_order">Захиалах</button>
           </div>
         </Offcanvas.Body>
       </Offcanvas>
