@@ -145,7 +145,7 @@ export default function ProductCard() {
         </div>
         <div className="d-flex flex-wrap gap-3">
           {testRel && testRel.slice(0,4).map((item, index) => (
-            <div key={index}>
+            <div key={index} className="underProduct">
               <Card item={item} />
             </div>
           ))}
