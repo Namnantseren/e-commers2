@@ -23,7 +23,7 @@ function App() {
   const [basketItems, setBasketItems] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:2030/users`).then((res) => setData(res.data));
+    axios.get(`http://localhost:2031/products`).then((res) => setData(res.data));
   }, []);
 
   useEffect(() => {

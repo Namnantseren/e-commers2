@@ -7,51 +7,31 @@ import { Productcontext } from "../App";
 export default function Example() {
   const { data, basketItems } = useContext(Productcontext);
   const [show, setShow] = useState(false);
-  const [basketProduct, setBasketProduct] = useState(data);
+  const [basketProduct, setBasketProduct] = useState(localStorage.getItem("basketProduct") && localStorage.getItem("basketProduct"));
   const [basketItem, setBasketItem] = useState(basketItems);
 
   console.log("basketProduct 1 shuu :", basketProduct);
-
   console.log("order : ", basketItems);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function basketRemover(id) {
-    // setBasketItem(basketItem.filter((prod) => prod.id !== id));
-    localStorage.setItem(
-      "basket",
-      JSON.stringify(basketItem.filter((prod) => prod.id !== id))
-    );
-  }
-
-  useEffect(() => {
-    localStorage.setItem("basket", JSON.stringify(basketItem));
-  });
 
   console.log("BasketProduct 2 :", basketProduct);
 
-  useEffect(() => {
-    localStorage.setItem("basket", JSON.stringify(basketItem));
-    const filteredData =
-      data &&
-      data.filter((product) =>
-        basketItem?.find((basket) => basket.id === product.id)
-      );
-    setBasketProduct(filteredData);
-  }, [basketItem]);
-
-  // basketProduct =
-    data &&
-    data.filter(
-      (product) =>
-        basketItem &&
-        basketItem.find((findProduct) => findProduct.id === product.id)
-    );
+  // useEffect(() => {
+  //   const filteredData =
+  //     data &&
+  //     data.filter((product) =>
+  //       basketItem?.find((basket) => basket.id === product.id)
+  //     );
+  //   setBasketProduct(filteredData);
+  // }, [basketItem]);
     
   function basketRemover(id) {
     let deleteHandler =
       basketItem && basketItem.filter((delProd) => delProd.id !== id);
     localStorage.setItem("basket", JSON.stringify(deleteHandler));
+    setBasketProduct(deleteHandler);
   }
 
   useEffect(() => {
@@ -65,7 +45,7 @@ export default function Example() {
     console.log("fitlered DAta : ", filteredData);
     console.log(" DAta : ", data);
     setBasketProduct(filteredData);
-  }, []);
+  }, [basketItem]);
 
   function clearBusket() {
     localStorage.removeItem("basket");

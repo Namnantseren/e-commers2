@@ -1,5 +1,4 @@
 import './SectionStyle/style.css'
-// import { Data } from "../Data/Data"
 import { useState } from 'react';
 import Card from "../Card/Card"
 
@@ -10,7 +9,7 @@ export default function Section({data}) {
         if(e.target.innerText === "All") {
             setinput(data)
         } else {
-           let hoh = data.filter((cate) =>  cate.category.includes(e.target.innerText))
+           let hoh = data && data.filter((cate) =>  cate.category === (e.target.innerText))
            setinput(hoh);
         }
     }
