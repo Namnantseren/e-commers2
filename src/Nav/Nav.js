@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./NavStyle/NavStyle.css";
 import Order from "../Pages/Order";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 
@@ -20,6 +19,7 @@ export default function Nav() {
 
   const handleClose = () => setShow(false);
   const handleShowOne = () => setShow(true);
+  
   function sign() {
     lildata.map((use) => {
       if (userName === use.username && userPassword === use.password) {
@@ -43,17 +43,17 @@ export default function Nav() {
 
   function saveRegister(e) {
     e.preventDefault();
-    axios.post("http://localhost:2030/registerUser", {
+    axios.post("http://localhost:2031/user", {
       name: e.target.name.value,
       email: e.target.email.value,
       password: e.target.password.value,
       repassword: e.target.repassword.value
     })
-
     console.log("Name :", e.target.name.value);
   }
 
   const navigate = useNavigate();
+
   function jumpmain() {
     navigate(`/`);
   }

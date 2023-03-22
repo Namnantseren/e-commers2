@@ -16,15 +16,21 @@ import axios from "axios";
 import Slide from "./Slider/Slide";
 // import { useEffect, useState } from 'react';
 import { useEffect, useState, createContext } from "react";
+import Nav from "./Nav/Nav";
 export const Productcontext = createContext();
 
 function App() {
   const [data, setData] = useState();
+  const [user, setUser] = useState();
   const [basketItems, setBasketItems] = useState([]);
 
   useEffect(() => {
     axios.get(`http://localhost:2031/products`).then((res) => setData(res.data));
   }, []);
+
+  useEffect(() => {
+    axios.get(`http://localhost:2031/user`).then((res) => setUser(res.user))
+  })
 
   useEffect(() => {
     if (localStorage.getItem("basket")) {
@@ -37,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <Productcontext.Provider value={{ data, setBasketItems, basketItems}}>
+      <Productcontext.Provider value={{ data, setBasketItems, basketItems, user}}>
         <Routes>
           <Route path="/" element={<Home data={data} />} />
           <Route path="/product/:id" element={<ProductCard data={data} />} />
@@ -55,6 +61,7 @@ function App() {
           <Route path="/Dashboard/Settings" element={<Settings />} />
           <Route element={<Section data={data} />} />
           <Route element={<Slide/>}/>
+          {/* <Route element={<Nav data={user}/>} /> */}
         </Routes>
       </Productcontext.Provider>
     </div>
