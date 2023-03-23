@@ -14,15 +14,18 @@ export default function Nav() {
 
   function sign(e) {
     e.preventDefault();
-    axios.post("http://localhost:2031/login", {
-      email: e.target.loginEmail.value,
-      password: e.target.loginPassword.value,
-    }).then((res) => {console.log("Email res:",res)})
+    axios
+      .post("http://localhost:2031/login", {
+        email: e.target.loginEmail.value,
+        password: e.target.loginPassword.value,
+      })
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(res.data));
+      });
   }
 
-
   function searchclick() {
-    if (research !== "" || research !== undefined || research !== null) {
+    if (research !== "") {
       navigate(`/search/${research}`);
     }
   }
@@ -65,14 +68,26 @@ export default function Nav() {
       <div className="nav-right flex">
         <img src="../user.svg" alt="" />
         <button className="Signin">
-          <div
-            type="button"
-            className="btn Signin"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Sign in
-          </div>
+          {localStorage.getItem("user") ? (
+            <a
+              type="button"
+              className="btn Signin"
+              onClick={() => {localStorage.removeItem("user"); localStorage.removeItem("basket")}}
+              href="/"
+            > 
+              Log out
+            </a>
+          ) : (
+            <a
+              type="button"
+              className="btn Signin"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              href="/"
+            >
+              Sign in
+            </a>
+          )}
 
           <div
             className="modal fade"
@@ -117,7 +132,7 @@ export default function Nav() {
                   <button
                     className="btn btn-primary nevtreh"
                     type="Submit"
-                    // data-bs-dismiss="modal"
+                    data-bs-dismiss="modal"
                   >
                     Нэвтрэх
                   </button>

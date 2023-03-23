@@ -105,7 +105,7 @@ export default function ProductCard() {
                   )}
                 </div>
               </div>
-              <button className="pro-double" onClick={addBasket}>
+              <button className="pro-double"  onClick={() => localStorage.getItem("user") ? addBasket() : alert("Uuchalrai burtguulnu")}>
                 Add to card
               </button>
               <button className="pro-double pro-special-buy">Buy it now</button>

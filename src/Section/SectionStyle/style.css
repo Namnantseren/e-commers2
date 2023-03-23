@@ -1,4 +1,4 @@
-.allselectionbtn {
+.inactiveBtn {
     width: 139px;
     height: 45px;
     color: #003585;
@@ -11,10 +11,16 @@
 }
 
 
-.allselectionbtn:focus {
+.activeBtn {
     background-color: #A7F65C;
     color: black;
     border-color: #A7F65C;
+    width: 139px;
+    height: 45px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .cardimg img {
