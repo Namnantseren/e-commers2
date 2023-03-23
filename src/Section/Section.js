@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Card from "../Card/Card"
 
 export default function Section({data}) {
-    console.log("Section :", data);
     const [input, setinput] = useState(data);
     function changer(e){
         if(e.target.innerText === "All") {
@@ -13,8 +12,6 @@ export default function Section({data}) {
            setinput(hoh);
         }
     }
-
-    console.log("input :",input)
     return(
         <div>
             <div className='flex containerSelector'>

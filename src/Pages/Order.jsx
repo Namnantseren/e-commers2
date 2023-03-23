@@ -10,13 +10,10 @@ export default function Example() {
   const [basketProduct, setBasketProduct] = useState(localStorage.getItem("basketProduct") && localStorage.getItem("basketProduct"));
   const [basketItem, setBasketItem] = useState(basketItems);
 
-  console.log("basketProduct 1 shuu :", basketProduct);
-  console.log("order : ", basketItems);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
 
-  console.log("BasketProduct 2 :", basketProduct);
 
   // useEffect(() => {
   //   const filteredData =
@@ -35,15 +32,11 @@ export default function Example() {
   }
 
   useEffect(() => {
-    console.log("baksetItem : ", basketItem);
     let filteredData =
       data &&
       data.filter((product) =>
         basketItem?.find((basket) => basket.id === product.id)
       );
-
-    console.log("fitlered DAta : ", filteredData);
-    console.log(" DAta : ", data);
     setBasketProduct(filteredData);
   }, [basketItem]);
 

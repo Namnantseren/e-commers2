@@ -29,15 +29,16 @@ function App() {
   }, []);
 
   useEffect(() => {
-    axios.get(`http://localhost:2031/user`).then((res) => setUser(res.user))
-  })
+    axios.get(`http://localhost:2031/user`, (req, res)=> {
+      console.log("Login req: ", req);
+    })
+  }, [])
 
   useEffect(() => {
     if (localStorage.getItem("basket")) {
       setBasketItems(JSON.parse(localStorage.getItem("basket")));
     }
     console.log("basketItems : " , basketItems);
-
   }, [])
   // console.log("Orj irj bui data:", data);
 
@@ -61,7 +62,7 @@ function App() {
           <Route path="/Dashboard/Settings" element={<Settings />} />
           <Route element={<Section data={data} />} />
           <Route element={<Slide/>}/>
-          {/* <Route element={<Nav data={user}/>} /> */}
+          <Route element={<Nav data={user}/>} />
         </Routes>
       </Productcontext.Provider>
     </div>
