@@ -13,16 +13,6 @@ export default function Example() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
-
-  // useEffect(() => {
-  //   const filteredData =
-  //     data &&
-  //     data.filter((product) =>
-  //       basketItem?.find((basket) => basket.id === product.id)
-  //     );
-  //   setBasketProduct(filteredData);
-  // }, [basketItem]);
     
   function basketRemover(id) {
     let deleteHandler =

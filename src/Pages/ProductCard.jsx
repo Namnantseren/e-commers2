@@ -33,17 +33,7 @@ export default function ProductCard() {
     }
     localStorage.setItem("basket", JSON.stringify(baskets))
   }
-
-  // function addBasket() {
-  //   if (localStorage.getItem("basket")) {
-  //       let test = JSON.parse(localStorage.getItem("basket"))
-  //       setBasketItems(test)
-  //   }
-  //   console.log("basket items : " , basketItems);
-  //   setBasketItems([...basketItems, { id: dat[0].id }])
-  //   localStorage.setItem("basket", JSON.stringify(basketItems));
-  // }
-
+  
   return (
     <div>
       <Nav />
