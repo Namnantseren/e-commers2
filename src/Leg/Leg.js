@@ -4,12 +4,12 @@ import './Leg/Leg.css'
 export default function leg() {
     return(
         <div>
-            <div className='flex leg'>
+            <div className='leg'>
                 <div className='leftproduct'>
                     <div className='specialproduct'>
                         <p className='specialp leg-left-parag'>Special Product</p>
                     </div>
-                    <div>
+                    <div className='leftImage'>
                         <img src="../speaker.svg" alt="" />
                     </div>
                     <div className='containerofcarts'>

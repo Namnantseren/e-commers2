@@ -7,7 +7,7 @@ import Section from '../Section/Section';
 export default function Home({data}) {
     
     return(
-    <div>
+    <div className='MainBody'>
         <Nav/>
         <Slide />
         <Section data={data}/>

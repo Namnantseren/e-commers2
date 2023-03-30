@@ -1,27 +1,42 @@
 .footer {
     max-width: 100%;
-    height: 100%;
+    max-height: 100%;
     background-color: #003585;
     margin-top: 131px;
     display: flex;
 }
 
+.footerTopImg img{ 
+    width: 100%;
+}
+
+.margoogle {
+    max-width: 100%;
+}
 .containertuulai {
-    width: 401px;
-    height: 347px;
+    max-width: 100%;
+    max-height: 100%;
     padding: 100px;
 }
 
+@media screen and (max-width: 360px) {
+    .containertuulai {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
 .tuulai {
-    margin-top: 86px;
+    margin: 86px 0px 0px 10px;
     color: white;
     font-weight: 500;
     font-size: 15px;
     margin-top: 150px;
+    width: 100%;
 }
 
 .innerfooter {
-    width: 500px;
+    max-width: 100%;
     margin: auto;
 }
 

@@ -5,7 +5,7 @@ export default function footer() {
     <div className="footer">
       <div className="innerfooter">
         <div className="containertuulai">
-          <div>
+          <div className="footerTopImg">
             <img src="../Nav.svg" alt="pic" />
           </div>
           <div className="gfw">
@@ -15,7 +15,10 @@ export default function footer() {
             <div className="margoogle">
               <img src="../facebook.svg" alt="" />
             </div>
-            <img src="../google.svg" alt="" />
+            <div className="margoogle">
+              <img src="../google.svg" alt="" />
+            </div>
+           
           </div>
         </div>
       </div>

@@ -10,6 +10,13 @@
     background-color: white;
 }
 
+.rightselect {
+    max-width: 100%;
+}
+
+.containerofcard {
+    max-width: 100%;
+}
 
 .activeBtn {
     background-color: #A7F65C;
@@ -48,13 +55,15 @@
     justify-content: space-evenly;
     margin-top: 97px;
     margin-bottom: 54px;
+    flex-wrap: wrap;
 }
 
 .midselector {
-    width: 1314px;
-    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    /* margin: auto; */
     flex-wrap: wrap;
-    margin-bottom: 37px;
+    justify-content: center;
     gap: 24px;
 }
 

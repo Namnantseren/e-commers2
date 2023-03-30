@@ -2,25 +2,51 @@
     display: flex;
 }
 
-.leg {
+.leg { 
     height: 783px;
     width: 1315px;
     margin: auto;
     margin-top: 116px;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
 }
 
+@media screen and (max-width: 360px) {
+    .leg {
+        height: 783px;
+        width: 1315px;
+        margin: auto;
+        /* margin-top: 116px; */
+        max-width: 100%;
+        max-height: 100%;
+        /* display: block; */
+    }
+    
+}
+
+
 .leftproduct {
-    width: 642px;
-    height: 783px;
+    max-width: 642px;
+    max-height: 783px;
     border: 1px solid #C8C8C8;
     border-radius: 20px;
+}
+
+@media screen and (max-width: 360px) {
+    .leftproduct {
+        padding: 20px;
+        max-width: 321px;
+        max-height: 100%;
+    }
 }
 
 .addtocartcontainer {
     background-color: #A7F65C;
     border: 0;
     border-radius: 20px;
-    width: 204px;
+    max-width: 204px;
+    max-height: 102px;
     height: 60px;
     color: #00314D;
     margin-top: 37px;
@@ -34,22 +60,28 @@
 }
 
 .containerofcarts {
-    width: 538px;
-    height: 282px;
+    max-width: 538px;
+    max-height: 282px;
+    min-width: 269px;
+    min-height: 141px;
     margin: auto;
 }
 
 .innershopping {
-    width: 30.49px;
-    height: 30.49px;
+    max-width: 30.49px;
+    max-height: 30.49px;
+    min-width: 15.245;
+    min-height: 15.245;
     background-color: #003585;
     border-radius: 50px;
     margin: 10px 0px 0px 40px;
 }
 
 .innershopping img {
-    width: 17.21px;
-    height: 17.21px;
+    max-width: 17.21px;
+    max-height: 17.21px;
+    min-width: 8.605px;
+    min-height: 8.605px;
     margin-top: 6px;
 }
 
@@ -69,18 +101,33 @@
 .randombullshit {
     font-weight: 400;
     font-size: 13px;
+    width: 100%;
     color: #00314D;
 }
 
 .specialproduct {
     background-color: #003585;
     color: white;
-    width: 252px;
-    height: 60px;
+    max-width: 252px;
+    max-height: 60px;
+    min-width: 124.1px;
+    min-height: 30px;
     font-weight: 700;
     font-size: 25px;
     text-align: center;
     margin-top: 15px;
+}
+
+.leftImage img {
+    max-width: 568px;
+    max-height: 399px;
+}
+
+@media screen and (max-width: 360px) {
+   .leftImage img {
+    max-width: 284px;
+    max-height: 200px;
+   }
 }
 
 .specialp {
@@ -90,15 +137,36 @@
 
 .gap {
     gap: 55px;
-    /* align-items: center; */
     justify-content: center;
     margin-top: 163px;
+    display: flex;
+}
+
+.rightproduct {
+    max-width: 100%;
+}
+
+@media screen and  (max-width: 500px){
+    .gap img {
+        max-width: 107px;
+        max-height: 21px;
+    }
+
+    .gap {
+        gap: 10px;
+        margin-top: 81.5px;
+        flex-wrap: wrap;
+    }
+}
+
+.gap img{
+    max-width: 100%;
 }
 
 /*                                        TOP   product                                 */
 
 .topproduct {
-    width: 650px;
+    width: 100%;
     height: 369px;
     border-radius: 20px;
     border: 1px solid #C8C8C8;
@@ -107,6 +175,18 @@
 
 .containeroflil {
     margin: 40px 34px 0px 16px;
+}
+
+.containeroflil img {
+    max-width: 319px;
+    max-height: 289px;
+}
+
+@media screen and (max-width: 360px) {
+    .containeroflil img {
+        max-width: 159.5px;
+        max-height: 144.5px;
+    }
 }
 
 .containerofbull {
@@ -120,7 +200,6 @@
     background: 0;
     color: #A7F65C;
     padding: 0;
-    margin-top: 55px;
     font-size: 17.14px;
 }
 

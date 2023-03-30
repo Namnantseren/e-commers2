@@ -8,6 +8,14 @@
     z-index: 1;
 }
 
+.MainBody {
+    max-width: 100%;
+}
+
+.group-laptop img{
+    max-width: 100%;
+}
+
 .proimg img {
     width: 647px;
     height: 561px;

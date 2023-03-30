@@ -17,7 +17,7 @@ export default function Slide() {
   return (
     <div className="containerCanon flex">
       <Carousel>
-        <Carousel.Item>
+        <Carousel.Item className="carouselItem">
         <div className='containerCanon flex'>
             <div className='leftCanon'>
                 <div className='containerofbtcan'>
