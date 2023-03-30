@@ -15,38 +15,11 @@ export default function Slide() {
     // console.log("sudo name:",sudo.name);
 
   return (
-    <div className="containerCanon flex">
+    <div className="containerCanon flex " >
       <Carousel>
-        <Carousel.Item className="carouselItem">
-        <div className='containerCanon flex'>
-            <div className='leftCanon'>
-                <div className='containerofbtcan'>
-                    <div className='containerofcanon'>
-                        <p className='canonCamera'>Canon camera</p>
-                    </div>
-                    <div className='containerofbtns'>
-                        <button className='shopnow btns'>Shop now</button>
-                        <button className='viewmore btns'>View more</button>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-            
-            <div className="position-relative">
-                <div className='rightCanon flex'>
-                    <img src="../Camera.svg" alt="" />
-                </div>
-                <div className='only flex'>
-                    <p className='onlydollar'>only $89</p>
-                </div>
-            </div>
-            
-        </div>
-          
-        </Carousel.Item>
         <Carousel.Item>
         <div className='containerCanon flex'>
-            <div className='leftCanon'>
+            <div className='leftCanon w-32 sm:w-32 md:w-64 lg:w-96 xl:w-[1280px]'>
                 <div className='containerofbtcan'>
                     <div className='containerofcanon'>
                         <p className='canonCamera'>Canon camera</p>
@@ -60,35 +33,8 @@ export default function Slide() {
             </div>
             
             <div className="position-relative">
-                <div className='rightCanon flex'>
-                    <img src="../Camera.svg" alt="" />
-                </div>
-                <div className='only flex'>
-                    <p className='onlydollar'>only $89</p>
-                </div>
-            </div>
-            
-        </div>
-          
-        </Carousel.Item>
-        <Carousel.Item>
-        <div className='containerCanon flex'>
-            <div className='leftCanon'>
-                <div className='containerofbtcan'>
-                    <div className='containerofcanon'>
-                        <p className='canonCamera'>Canon camera</p>
-                    </div>
-                    <div className='containerofbtns'>
-                        <button className='shopnow btns'>Shop now</button>
-                        <button className='viewmore btns'>View more</button>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-            
-            <div className="position-relative">
-                <div className='rightCanon flex'>
-                    <img src="../Camera.svg" alt="" />
+                <div className='rightCanon flex '>
+                    <img src="../Camera.svg" alt="" className="w-32 sm:w-32 md:w-64 lg:w-96 xl:w-[1280px]"/>
                 </div>
                 <div className='only flex'>
                     <p className='onlydollar'>only $89</p>

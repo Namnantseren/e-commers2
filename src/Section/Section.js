@@ -15,7 +15,7 @@ export default function Section({data}) {
         }
     }
     return(
-        <div>
+        <div >
             <div className='flex containerSelector'>
                 <div className='leftselect'>
                     <p>Popular products</p>
@@ -34,7 +34,6 @@ export default function Section({data}) {
                 <div key={index}>
                     <Card item={item}/>
                 </div>
-            
             ))}
             </div>
             </div>

@@ -47,12 +47,12 @@ export default function Nav() {
     navigate(`/`);
   }
   return (
-    <div className="nav-main">
-      <div className="nav-left flex">
+    <div className="nav-main ">
+      <div className="nav-left flex ">
         <div className="navImage">
           <img src="../Nav.svg" onClick={jumpmain} alt="" />
         </div>
-        <div className="allsearch">
+        <div className="allsearch w-32 sm:w-32 md:w-64 lg:w-96 xl:w-[1280px]">
           <form onSubmit={searchclick}>
             <input
               className="search"
@@ -65,7 +65,7 @@ export default function Nav() {
           </form>
         </div>
       </div>
-      <div className="nav-right flex">
+      <div className="nav-right flex w-32 sm:w-32 md:w-64 lg:w-96 xl:w-[1280px]">
         <img src="../user.svg" alt="" />
         <button className="Signin">
           {localStorage.getItem("user") ? (
